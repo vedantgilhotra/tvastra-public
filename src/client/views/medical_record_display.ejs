@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Medical Record</title>
+    <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+    <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+    <link href="/scss/medical_record_display.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+    <nav class="phone_and_tab_nav">
+        <a href="/"><img id="brand_logo" src="/images/logo.png" alt="Brand Logo"></a>
+        
+        <div class="right_aligned">
+            <div class="profile_dropdown">
+                <% if(user.profile_picture) {%>
+                    <img src="<%= user.profile_picture %>">
+                <% } %>
+                <% if(!user.profile_picture) {%>
+                    <img src="https://tvastra-profile-pictures.s3.ap-south-1.amazonaws.com/iconfinder_user_1608727.png">
+                <% } %>
+                <i class="fas fa-chevron-down" id="profile_picture_dropwdown_icon"></i>
+                <div class="profile_dropdown_options">
+                    <% if(user.is_doctor==false) {%>
+                        <a href="/user_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    <% if(user.is_doctor==true) {%>
+                        <a href="/doctor_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    
+                    <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                    <hr>
+                    <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                    <hr>
+                    <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                    <hr>
+                    <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                    <hr>
+                    <a href="/logout"><span class="option_hover">Logout</span></a>
+                    <hr>
+                </div>
+            </div>
+            <i id="sidebar_toggle" class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <nav class="laptop_nav">
+    
+        <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+
+        <div class="nav_links">
+            <a href="/doctor"><p>Doctors</p></a>
+            <a href="/hospital"><p>Hospitals</p></a>
+            <div class="treatment_container">
+                <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                <div class="treatment_dropdown">
+                    <a href="/dentistry"><span>Dentistry</span></a>
+                    <a href="/dentistry"><span>Cancer</span></a>
+                    <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                    <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                    <a href="/dentistry"><span>Infertility Treatment</span></a>
+                </div>
+            </div>
+            <a href="/aboutus"><p>About</p></a>
+            
+        </div>
+        <% if(loggedinstatus == false) {%>
+        <div class="nav_buttons">
+            <a href="/email_login"><button type="button" id="login_button" class="login_button">Login/Sign Up</button></a>
+
+            <button type="button" class="get_quote_button">Get a Quote</button>
+        </div>
+        <% } %>
+        <% if(loggedinstatus == true) {%>
+            <div class="nav_buttons">
+                <a href="#"><button type="button" id="tvastra_plus" class="tvastra_plus">Tvastra Plus</button></a>
+                <button type="button" class="get_quote_button">Get a Quote</button>
+                <div class="container_element">
+                    <span class="loggedinuser"><%=  user.name %><i class="fas fa-chevron-down"></i></span>
+                    <div class="user_dropdown">
+                        <div class="dropdown_options">
+                            <% if(user.is_doctor==false) {%>
+                                <a href="/user_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            <% if(user.is_doctor==true) {%>
+                                <a href="/doctor_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            
+                            <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                            <hr>
+                            <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                            <hr>
+                            <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                            <hr>
+                            <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                            <hr>
+                            <a href="/logout"><span class="option_hover">Logout</span></a>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </nav>
+
+    <div class="siteflow">
+        
+        <!-- <% if(message == "record(s) overlap,please check") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Error</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%> -->
+        
+           <% if(message=="Record updated successfully") {%>
+            <div class="message success" id="message">
+                <i class="fas fa-check-circle big_icon"></i>
+                <h2>Success</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%>
+        
+           <!-- <% if(message=="Added record successfully") {%>
+            <div class="message success" id="message">
+                <i class="fas fa-check-circle big_icon"></i>
+                <h2>Success</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%> -->
+
+        <section class="dashboard_and_page_body">
+            <div class="dashboard">
+                <div class="dashboard_header">
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="dashboard_options">
+
+                    <% if(user.is_doctor==true) {%>
+                    <a href="/doctor_profile_edit" class="dashboard_option"><i
+                        class="fas fa-user-edit"></i><span>Profile</span></a>
+                    <% } %>
+
+                    <% if(user.is_doctor==false) {%>
+                    <a href="/user_profile_edit" class="dashboard_option"><i
+                        class="fas fa-user-edit"></i><span>Profile</span></a>
+                    <% } %>
+
+                    <a href="/all_appointments" class="dashboard_option"><i class="fas fa-list"></i><span
+                            class="">Appointments</span></a>
+
+                    <a href="/medical_records" class="selected_option dashboard_option"><i class="fas fa-file-alt"></i><span class="">Medical
+                            Records</span></a>
+
+                    <% if(user.is_doctor == true) {%>
+                        <a href="/doctor_create_schedule" class="dashboard_option"><i class="fas fa-pen-fancy"></i><span class="">Create/Edit
+                            records</span></a>
+                    <% } %>
+                    <a href="/change_password_settings" class="dashboard_option"><i class="fas fa-user-cog"></i><span
+                            class="">Settings</span></a>
+
+                    
+
+                </div>
+            </div>
+
+            <div class="page_body">
+                <div class="page_body_header">
+                    <button class="create_new_record" onclick="modal_open()" type="submit">Add Record</button>
+                    <h2>Record</h2>
+                </div>
+                <div class="main">
+                    <span class="record_id" id="<%= record_id %>" style="display: none;"></span>
+                    <% for(var i= 0 ; i < record.uploads.length ; i++) {%>
+                        <div class="image_container">
+                            <div class="container_header">
+                                <span class="image_title"><%= record.title %></span>
+                                <i class="fas fa-ellipsis-v options" id="options_<%= i %>"></i>
+                            </div>
+                            <span class="delete_image" id="delete_image_<%= i %>">Delete</span>
+                            <img class="image" src="<%= record.uploads[i] %>" >
+                        </div>
+                    <% } %>
+                </div>
+                
+            </div>
+            
+    </div>
+    </div>
+    </section>
+    </div>
+
+    <footer>
+    
+    
+    
+        <div class="footer_flex_mobile">
+
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            <a href="/doctor"><span>Doctor</span></a>
+
+            <a href="/hospital"><span>Hospital</span></a>
+
+            <a href="/dentistry"><span>Treatment</span></a>
+
+            <a href="/contactus"><span>Contact us</span></a>
+
+            <a href="/faq"><span>FAQs</span></a>
+
+            <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-instagram"></i></span>
+
+            <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+
+        </div>
+
+        <div id="footer_flex_tab_laptop" class="footer_flex_tab_laptop">
+            <div class="footer_flex_inner_one">
+                <div class="footer_flex_inner_one_left">
+                    <a href="/doctor"><span>Doctor</span></a>
+
+                    <a href="/hospital"><span>Hospital</span></a>
+
+                    <a href="/dentistry"><span>Treatment</span></a>
+
+                    <a href="/contactus"><span>Contact us</span></a>
+
+                    <a href="/faq"><span>FAQs</span></a>
+
+                </div>
+
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            </div>
+
+            <div class="footer_flex_inner_two">
+                <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+                <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-instagram"></i></span>
+            </div>
+        </div>
+
+        
+    
+    </footer>
+    <div class="modal">
+        <div class="form_container_modal">
+            <form method="POST" class="main_form" id="create_record_form" action="/medical_record_display?id=<%= record_id %>" enctype="multipart/form-data">
+                <i class="fas fa-times modal_close"></i>
+                <div class="pictures_container">
+                    <label for="pictures_input">
+                        <i class="fas fa-plus"></i>
+                        Add Photos
+                    </label>
+                    <input type="file" required multiple name="pictures_input" id="pictures_input" style="display: none;" accept="image/*">
+                </div>
+
+                <div class="form_buttons">
+                    <button class="cancel" type="button" onclick="modal_close_function()">Cancel</button>
+                    <button class="record_submit" id="submit_button" type="submit">Create record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="sidebar_shade">
+        <div class="sidebar">
+            <i class="fas fa-arrow-right" id="sidebar_close"></i>
+            <a href="/doctor">
+                <div class="sidebar_entry">
+                    <span class="sidebar_span">Doctors</span>
+                </div>
+            </a>
+            <a href="/hospital">
+                <div class="sidebar_entry">
+                    <span>Hospitals</span>
+                </div>
+            </a>
+            
+                <div class="sidebar_entry_copy" onclick="treatments_dropdown_toggle()">
+                    <span>Treatments   <i class="fas fa-chevron-down"></i></span>
+                </div>
+            
+            <div class="treatments_dropdown" style="display: none;">
+                <a href="/dentistry"><span>Dentistry</span></a>
+                <a href="/dentistry"><span>Cancer</span></a>
+                <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                <a href="/dentistry"><span>Orthopedics Surgery</span></a>
+                <a href="/dentistry"><span>Infertitlity Treatment</span></a>
+            </div>
+            <a href="/aboutus">
+                <div class="sidebar_entry">
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="/plus">
+                <div class="sidebar_entry">
+                    <span>Tvastra Plus</span>
+                </div>
+            </a>
+            <a href="/submit_query">
+                <div class="sidebar_entry">
+                    <span>Get a quote</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/scripts/sidebar_navigation.js" type="text/javascript"></script>
+    <script src="/scripts/message_animate.js" type="text/javascript"></script>
+    <script src="/scripts/medical_record_display.js" type="text/javascript"></script>
+</div>
+</body>
+
+</html>

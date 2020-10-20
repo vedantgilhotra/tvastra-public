@@ -1,0 +1,893 @@
+@import "./theme.scss";
+
+.siteflow{
+    // margin-top: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.FindHealthcare{
+    @include lightblueback();
+    padding: 35px 15px;
+    margin-top: 58px;
+    width: 100%;
+    p{
+        margin-top: 30px;
+    }
+
+    .locationinput{
+        @include whiteback();
+        margin-top: 25px;
+        height: 50px;
+        padding: 0rem 1rem;
+        
+        input{
+            border: none;
+            width: 85%;
+            text-align: left;
+            height: 100%;
+            padding-left: 1rem;
+            outline: none;
+        }
+        input::placeholder{
+            color: rgb(204, 202, 202);
+        }
+        i{
+            @include whiteback();
+            margin-top: 5px;
+            height:17px
+        }
+    }
+
+    .gpsicon{
+        background-color: white;
+        width: 17px;
+        height: 17px;
+    }
+
+    .DoctorSearch{
+        @include whiteback();
+        margin-top: 10px;
+        height: 50px;
+        padding: 0px;
+        input{
+            padding-left: 1rem;
+            text-align: left;
+            border:none;
+            width: 100%;
+            height: 100%;
+            outline: none;
+        }
+        input::placeholder{
+            color: rgb(204, 202, 202);
+        }
+    }
+
+    .buttoncontainer{
+        width: 150px;
+        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        align-content: center;
+       
+        .buttoninput{
+        @include darkblueback();
+            font-family: TheLightFont;
+            height: 40px;
+            width: 150px;
+            border: none;
+            align-content: center;
+            color: white;
+            letter-spacing: 1px;
+            font-size: 14px;
+            position: relative;
+            bottom: 2px;
+        }
+    }
+}
+
+.HowItWorks{
+    @include whiteback();
+    padding:15px;
+    h2{
+    margin-top: 20px;
+    }
+    p{
+    margin: 1rem 0 0px 0;
+    }
+    ol{
+        width: 100%;
+        list-style: none;
+        li{
+            &.bordered{
+                cursor: pointer;
+                padding: 19px 0px 17px 10px;
+                border: solid 1px rgb(8,16,56);
+                border-radius: 4px;
+                height: 50px;
+                margin: 30px 0 0px 0;
+                text-align: left;
+                font-size: 18px;
+                line-height: 12px;
+                font-family: TheBoldFont;
+                span{
+                    color: gainsboro;
+                }
+                b{
+                    color:gainsboro;
+                }
+            }
+            &.selected {
+                span{
+                    color: rgb(35,40,64);
+                }
+               
+                b{
+                    color: dodgerblue;
+                }
+    
+            }   
+        }
+    }
+    .mobile_view_image_container{
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        .mobile_view_image{
+            display: block;
+            width:300px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 312px;
+            margin-top: 30px;
+        }
+        b{
+            font-family: TheBoldFont;
+            color: #0c1552;
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 12px;
+            text-align: center;
+        }
+        p{
+            margin-top: 1rem;
+        }
+    }
+    
+    
+    
+
+    .tab_laptop_view_image{
+        display: none;
+    }
+}
+
+
+
+.world_class{
+    @include slateblueback();
+    margin-top: 30px;
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h3{
+        @include whitetext();
+    }
+    p{
+        @include whitetext();
+        margin-top: 20px;
+    }
+    img{
+        object-fit: cover;
+        margin-top: 15px;
+        width: 330px;
+        height: 350px;
+    }
+    .doctor_card{
+        display: none;
+    }
+    .active_doctor_card{
+        display: block;
+    }
+    .doctordescription{
+        @include whiteback();
+        margin-top: 0px;
+        padding: 5px 0px 15px 0px;
+        width: 330px;
+        position: relative;
+        bottom: 3px;
+        border-bottom: solid 3px lightblue;
+        b{
+            @include bluetext();
+            position: relative;
+            top: 3px;
+            font-size: 16px;
+            font-family: TheBoldFont;
+            text-align: left;
+        }
+        .dashline{
+            @include bluetext();
+            display: inline-block;
+            margin: 0px;
+            height: 2px;
+            width: 30px;
+            border: none;
+            background-color: dodgerblue;
+            text-align: left;
+        }
+        span{
+            font-family: TheLightFont;
+            font-size: 14px;
+            line-height: 20px;
+            margin-left: 33px;
+        }
+    }
+    .navigation_dots{
+        display: none;
+    }
+}
+
+.featured_medical{
+    @include whiteback();
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h3{
+        margin-top: 15px;
+    }
+    p{
+        margin-top: 15px;
+        margin-bottom: 0rem;
+    }
+    img{
+        margin-top: -350px;
+        object-fit: cover;
+        width:330px;
+        height: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dentistry{
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+        background-position: center;
+        background-size: cover;
+        width:330px;
+        height:350px;
+        position: relative;
+        top:15px;
+        z-index:2;
+        span{
+            position: relative;
+            top:290px;
+            left:15px;
+        }
+        .headingspan{
+            @include whitetext();
+            font-family: TheLightFont;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 1px;
+            line-height: 25px;
+        }
+        .descspan{
+            @include whitetext();
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-weight: 200;
+        }
+    }
+    .treatment_card{
+        margin-top: 1rem;
+    }
+    .cancer{
+        @extend .dentistry;
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .cardiology{
+        @extend .dentistry;
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .multi_organ{
+        @extend .dentistry;
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .orthopedics{
+        @extend .dentistry;
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    .infertility{
+        @extend .dentistry;
+        background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0,212,255,0) 50%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.exclusive_services{
+    @include greyback();
+    margin-top: 15px;
+    padding: 15px;
+    p{
+        margin-top: 15px;
+    }
+    .services_flex{
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        .service{
+            margin: 5px;
+            width: 150px;
+            border: solid 1px white;
+            border-radius: 15px;
+            background-color: white;
+            padding: 20px;
+            img{
+                display: block;
+                object-fit: cover;
+                margin-left: auto;
+                margin-right: auto;
+                height: 75px;
+                width: 60px;
+            }
+            span{
+
+                display: block;
+                font-family: TheBoldFont;
+                font-size: 13px;
+                text-align: center;
+                color: rgb(126,96,96);
+                 
+             }
+        }
+    }
+}
+
+.need_help{
+    padding: 35px 15px 35px 15px;
+    background-color:rgb(122,176,212);
+    width: 100%;
+   .need_help_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h3{
+        @include whitetext();
+    }
+    p{
+        text-align: center;
+        margin-top: 15px;
+    }   
+    button{
+        padding: 0rem 1rem;
+        font-family: TheLightFont;
+        font-weight: 800;
+        font-size: 15px;
+        letter-spacing: 1px;
+        display: block;
+        background-color: rgb(1,115,178);
+        @include whitetext();
+        border: solid 1px transparent;
+        box-shadow: none;
+        border-radius: 8px;
+        height:3rem;
+        margin-top:1.5rem;
+    }
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:735px){
+  
+    .FindHealthcare{
+        padding:2rem;
+        p{
+            margin-bottom: 0px;
+        }
+        .locationinput{
+            display: inline-block;
+            width: 230px;
+            input{
+                width: 80%;
+            }
+        }
+        .DoctorSearch{
+            display: inline-block;
+            width: 350px;
+            // padding: 10px 4px;
+            margin-left: -3px;
+            margin-top: 25px;
+        }
+
+        .buttoncontainer{
+            width: 120px;
+            display: inline-block;
+            margin-top: 25px;
+            margin-left: -3px;
+            margin-right: 0px;
+            height: 50px;
+            padding: 0px;
+            .buttoninput{
+                height: 50px;
+                padding: 10px 6px;
+            }
+        }
+    }
+
+    .HowItWorks{
+        padding: 2rem;
+        h2{
+            margin-top: 0rem;
+        }
+        ol{
+            margin-top: 15px;
+            // border:solid 1px black;
+            display: inline-block;
+            width:45%;
+            margin-bottom: 0px;
+            li{
+                &.bordered{
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .mobile_view_image_container{
+            display: none;
+        }
+
+        .tab_laptop_view_image{
+            margin-top: 15px;
+            // border:solid 1px black;
+            padding: 30px;
+            padding-right: 0px;
+            display: inline-block;
+            width: 50%;
+            img{
+                display: block;
+                width:300px;
+                height: 312px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            b{
+                text-align: center;
+                display: block;
+                margin-top: 15px;
+                font-size: 18px;
+                line-height: 12px;
+                font-family: TheBoldFont;
+            }
+            p{
+                margin-top: 15px;
+            }
+        }
+
+    }
+
+    .world_class{
+        margin-top: 0rem;
+        padding: 30px;
+        h3{
+            margin-bottom: 0rem;
+        }
+        p{
+            margin-bottom: 0rem;
+        }
+        .flex_view_doctors{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: stretch;
+            .doctor_card{
+                display: none;
+                margin: 5px;
+                width:335px;
+                
+                
+                .doctordescription{
+                    padding-bottom: 0rem    ;
+                    span{
+                        position: relative;
+                        bottom: 1rem;
+                    }
+                }
+                .three_liner{
+                    padding-bottom: 1.5rem;
+                }
+            }   
+            .active_doctor_card{
+                display: block;
+            }
+            
+        }
+    }
+
+    .featured_medical{
+        padding:2rem;
+        h3{
+            margin: 0rem;
+        }
+        p{
+            margin-bottom: 0rem;
+        }
+        .flex_view_treatments{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            align-items: stretch;
+            .treatment_card{
+                margin: 8px;
+            }
+        }
+    }
+
+    .exclusive_services{
+        margin-top: 0rem;
+        padding:2rem;
+        .services_flex{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            .service{
+                width: 220px;
+            }
+        }
+    }
+
+    .need_help{
+        padding: 30px;
+        h3{
+            margin-bottom: 0px;
+        }
+        p{
+            margin-bottom: 0px;
+        }
+        button{
+            margin-top: 20px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1280px){
+
+    .FindHealthcare{
+        padding: 7rem 6rem;
+        margin-top: 80px;
+        background-size: cover;
+        background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg);
+        background-repeat: no-repeat;
+        height: 425px;
+        width: 100%;
+        
+        h2{
+            color: rgb(42,45,62);
+            text-align: left;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+        p{
+            margin-top: 15px;
+            text-align: left;
+        }
+        .locationinput{
+            margin-top: 32px;
+        }
+        .DoctorSearch{
+            margin-top: 32px;
+        }
+    }
+
+    .HowItWorks{
+        padding: 4rem 6rem;
+        width: 100%;
+        h2{
+            text-align: left;
+            font-size: 40px;
+        }
+        p{
+            text-align: left;
+        }
+        ol{
+            width: 425px;
+            
+            li{
+                &.bordered{
+                    
+                    height: 100px;
+                    padding: 45px 0px 30px 20px;
+                    border-color: rgb(223,223,223);
+                    b{
+                        font-size: 25px;
+                        margin-right: 20px;
+                    }
+                    span{
+                        font-size: 25px;
+                    }
+                }
+                &.selected{
+                    border-color: rgb(156,191,218);
+                    b{
+                        color:rgb(156,191,218);
+                    }
+                
+                }
+                
+            }
+        }
+        .mobile_view_image{
+            display: none;
+        }
+        .tab_laptop_view_image{
+            margin-left: 120px;
+            // border: solid 1px black;
+            width: 600px;
+            img{
+                width:550px;
+                height:580px;
+            }
+            b{
+                margin-top:40px;
+            }
+            .li_description{
+                text-align: center;
+            }
+        }
+              
+    }
+
+    .world_class{
+        padding: 4rem 6rem;
+        flex-direction: column;
+        justify-content: start;
+        align-items: flex-start;;
+        h3{
+            font-size: 40px;
+            text-align: left;
+        }
+        p{
+            text-align: left;
+        }
+
+        .flex_view_doctors{
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            .doctor_card{
+                // margin: 10px;
+                width: 285px;
+                height: 400px;
+                img{
+                    width:280px;
+                    height: 285px;
+                }
+                .doctordescription{
+                    width: 280px;
+                    height: 115px;
+                    b{
+                        color: rgb(75,124,192);
+                    }
+                    .space_removal{
+                        display: none;
+                    }
+                    span{
+                        position: static;
+                    }
+                }
+            }
+        }
+        .navigation_dots{
+            display:block;
+            margin-top: 3rem;
+            margin-left: 4rem;
+            .dot{
+                height: 10px;
+                width: 10px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+            }
+    
+            .selected{
+                height: 12px;
+                width: 12px;
+                background-color: black;
+                border: solid 2px blue;
+                position: relative;
+                top: 1px;
+            }
+        }
+       
+    }
+
+    .featured_medical{
+        padding: 4rem 6rem;
+        width: 100%;
+        h3{
+            width: 100%;
+            text-align: left;
+            font-size: 40px;
+        }
+        p{
+            width: 100%;
+            text-align: left;
+        }   
+        .flex_view_treatments{
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            column-gap: 10px;
+            row-gap: 10px;
+            grid-template-areas: 
+            "dentistry cancer cardiology"
+            "multi_organ cancer cardiology"
+            "multi_organ cancer infertility"
+            "multi_organ cancer infertility"
+            "multi_organ orthopedics infertility";
+            .treatment_card{
+               margin: 0rem;
+               display: flex;
+               flex-direction: column;
+               justify-content:flex-end;
+               align-items: flex-start;
+               padding-left: 1rem;
+               padding-bottom: 1rem;
+            }
+            span{
+                position: static;
+            }
+            .dentistry{
+               grid-area: dentistry;
+                width: 390px;
+                height: 240px;
+            }
+            .cancer{
+               grid-area: cancer;
+               height: 385px;
+               width: 372px;
+            }
+           .cardiology{
+               grid-area:cardiology ;
+               height: 340px;
+               width: 372px;
+           }
+           .multi_organ{
+            grid-area:multi_organ ;
+            height: 535px;
+               width: 390px;
+            }
+            .orthopedics{
+            grid-area:orthopedics ;
+            height: 385px;
+               width: 372px;
+            }
+            .infertility{
+                grid-area:infertility ;
+                height: 435px;
+               width: 372px;
+            }
+        }
+        .navigation_dots_featured{
+            display:block;
+            margin-left: -57rem;
+            margin-top: 2rem;
+            .dot_featured{
+                height: 10px;
+                width: 10px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .selected_featured{
+                height: 12px;
+                width: 12px;
+                background-color: black;
+                border: solid 2px blue;
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+
+    .exclusive_services{
+        padding: 4rem 6rem;
+        width: 100%;
+        overflow: hidden;
+        h3{
+            text-align: left;
+            font-size: 40px;
+        }
+        p{
+            text-align: left;
+        }
+        .services_flex{
+            justify-content: center;
+            overflow: hidden;
+            grid-template-columns: auto auto auto auto auto auto;
+            .service{
+                border-radius: 2px;
+                width: 190px;
+                height: 180px;
+                padding: 25px 15px 15px 15px;
+            }
+        }
+        
+    }
+
+    .need_help{
+        padding: 4rem 6rem;
+        background-color: rgb(156,191,218);
+        width: 100%;
+        .need_help_flex{
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+           .need_help_left_div{
+               
+            h3{
+                font-size: 40px;
+                text-align: left;
+            }
+           }
+           button{
+            width: 14rem;
+            height: 65px;
+            display: block;
+            font-size: 18px;
+        }
+
+        }
+    }
+
+    
+}

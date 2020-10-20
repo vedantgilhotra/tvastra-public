@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login via OTP</title>
+        <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+        <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+        <link href="/scss/otp_login_otp.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="container">
+
+        <nav class="phone_and_tab_nav">
+            <img src="/images/logo.png" alt="Brand Logo">
+            <i class="fas fa-bars"></i>
+        </nav>
+
+        <nav class="laptop_nav">
+    
+            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+    
+            <div class="nav_links">
+                <a href="/doctor"><p>Doctors</p></a>
+                <a href="/hospital"><p>Hospitals</p></a>
+                <div class="treatment_container">
+                    <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                    <div class="treatment_dropdown">
+                        <a href="/dentistry"><span>Dentistry</span></a>
+                        <a href="/dentistry"><span>Cancer</span></a>
+                        <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                        <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                        <a href="/dentistry"><span>Infertility Treatment</span></a>
+                    </div>
+                </div>
+                <a href="/aboutus"><p>About</p></a>
+                
+            </div>
+            <div class="nav_buttons">
+               
+    
+                <button type="button" class="get_quote_button">Get a Quote</button>
+            </div>
+            
+            
+        </nav>
+
+        <div class="siteflow">
+            <% if(message == "Incorrect OTP") {%>
+                <div class="message incorrect" id="message">
+                    <i class="fas fa-times-circle big_icon"></i>
+                    <h2>Error</h2>
+                    <span><%=message%></span>
+                    <i class="fas fa-times small_icon"></i>
+                </div>
+               <%}%>
+
+               <% if(message == "OTP resent") {%>
+                <div class="message success" id="message">
+                    <i class="fas fa-check-circle big_icon"></i>
+                    <h2>Sent successfully</h2>
+                    <span><%=message%></span>
+                    <i class="fas fa-times small_icon"></i>
+                </div>
+               <%}%>
+
+               <% if(message == "unknown error occured") {%>
+                <div class="message incorrect" id="message">
+                    <i class="fas fa-times-circle big_icon"></i>
+                    <h2>Error</h2>
+                    <span><%=message%></span>
+                    <i class="fas fa-times small_icon"></i>
+                </div>
+               <%}%>
+    
+            <section class="login_box">
+                <h3>Enter OTP</h3>
+                <hr>
+                <div class="login_box_inner">
+                   <form method="POST" action="/otp_login_otp">
+                    
+                        <input type="text" name="otp" required id="otp" placeholder="Enter OTP Received">
+
+                        <span id="resendin" class="resendin"></span>
+                        <a id="resend" href="/resend_otp_login"><span class="resend">Resend OTP</span></a>
+
+                    <button type="submit" class="verify_otp"><span>Verify</span><i class="fas fa-arrow-right"></i></button>
+                   </form>
+                </div>
+            
+                
+            </section>
+            <span class="footer_end">All Rights Reserved © Tvastra 2020</span>
+        </div>
+        <script src="/scripts/message_animate.js" type="text/javascript"></script>
+        <script src="/scripts/resend_otp.js" type="text/javascript"></script>
+    </div>
+    </body>
+</html>

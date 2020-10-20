@@ -1,0 +1,135 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(156,191,218);
+}
+
+
+.siteflow{
+    width: 100%;
+    padding: 0rem 1rem;
+    .login_box{
+        background-color: white;
+        border: solid 1px transparent;
+        width:100%;
+        margin-top: 10rem;
+        box-shadow: 1rem 1rem 1rem rgba(0,0,0,.175);
+        h3{
+            margin-top: 1rem;
+            color: rgb(96,123,178);
+        }
+        hr{
+            margin-top: 1rem;
+            margin-bottom: 0px;
+        }
+        .login_box_inner{
+            padding:0px 1rem;
+            width: 100%;
+            #email{
+                font-family: TheLightFont;
+                height: 2.5rem;
+                margin-top: 1rem;
+                border: solid 1px gainsboro;
+                padding: 0rem 1rem;
+                width: 100%;   
+            }
+            #password{
+                font-family: TheLightFont;
+                padding: 0rem 1rem;
+                height: 2.5rem;
+                display: block;
+                margin-top: 0.5rem;
+                width: 100%;
+                border: solid 1px gainsboro;
+            }
+            .non_email_links{
+                padding: 1rem 0rem;
+                display: flex;
+                justify-content: space-between;
+                .non_email_link{
+                    font-family: TheBoldFont;
+                    font-size: 14px;
+                }
+            }
+            .login{
+                margin-top: 0.5rem;
+                @include whitetext();
+                display: block;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                height: 3rem;
+                border: none;
+                background-color: rgb(42,45,62);
+                span{
+                    letter-spacing: 3px;
+                }
+                i{
+                    float: right;
+                }
+            }
+        }
+        .not_registered{
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: rgb(97, 92, 89);
+            font-family: TheLightFont;
+            font-size: 13px;
+            font-weight: bolder;
+            b{
+                @include bluetext();
+                font-weight: bolder;
+            }
+        }
+
+        
+    }
+    .footer_end{
+        display: block;
+        text-align: center;
+        margin-top: 10rem;
+        margin-bottom: 2rem;
+        font-size: 12px;
+        font-weight: 900;
+        font-family: TheBoldFont;
+    }
+}
+
+
+
+@media screen and (min-width:768px)
+{
+    .siteflow{
+        padding:0px 11rem;
+        .footer_end{
+           margin-top: 15rem;
+        }
+    }
+}
+
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        padding: 0px 20rem;
+        .footer_end{
+            left:24.5rem;
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media screen and (min-width:1300px){
+    .siteflow{
+        padding: 0px 28rem;
+        .footer_end{
+            margin-top: 10rem;
+        }
+    }
+}

@@ -1,0 +1,651 @@
+@mixin darkblueback{
+    background-color: rgb(21, 31, 59);
+}
+
+nav{
+    max-width: 1440px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(110, 109, 109, 0.582); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(119, 114, 114, 0.699); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 114, 114); 
+  }
+
+.siteflow{
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    @media screen and (min-width:1366px){
+        min-width: 1349px
+    }
+    @media screen and (min-width:1440px){
+        min-width: 1440px; 
+    }
+    .message{
+        background-color: white;
+        position: absolute;
+        top: 6rem;
+        // right: 0rem;
+        height: 4rem;
+        padding: 0.5rem 1.5rem;
+        display: grid;
+        grid-template-columns: 40px auto 20px;
+        align-items: center;
+        column-gap: 10px;
+        grid-template-areas: 
+        "big_icon heading small_icon"
+        "big_icon message small_icon";
+        .big_icon{
+            grid-area: big_icon;
+            font-size: 40px;
+        }
+        .small_icon{
+            grid-area: small_icon;
+            font-size: 20px;
+        }
+        h2{
+            grid-area: heading;
+            text-align: left;
+            font-size: 16px;
+        }
+        span{
+            grid-area: message;
+            font-family: TheLightFont;
+            font-size: 12px;
+        }
+    }
+    .incorrect{
+        border-left:solid 4px red;
+        .big_icon{
+            color: red;
+        }
+        h2{
+            color: red;
+        }
+        span{
+            color: red;
+        }
+    }
+    .success{
+        border-left:solid 4px green;
+        top: 7rem;
+        .big_icon{
+            color: green;
+        }
+        h2{
+            color: green;
+        }
+        span{
+            color: green;
+        }
+    }
+}
+p{
+    font-family: TheLightFont;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 50;
+    color: rgb(12, 21, 82);
+}
+
+h2{
+    font-family: TheBoldFont;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(12, 21, 82);
+}
+
+h3{
+    font-family: TheBoldFont;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(12, 21, 82);
+}
+
+
+p{
+    .doctordescription{
+        font-family: Jansta;
+        font-size: 14px;
+    }
+}
+
+body{
+    @media screen and (min-width:1440px){
+        .container{
+            max-width: 1440px;
+            margin: 0rem auto;
+            padding: 0px;
+        }
+    }
+    background-color: white;
+    position: relative;
+    .sidebar_shade{
+        display: none;
+        position: absolute;
+        right: -100%;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        background-color: rgba(0, 0, 0, 0.712);
+        .sidebar{
+            padding-top: 1rem;
+            position: fixed;
+            right: 0px;
+            top: 0px;
+            background-color: white;
+            height: 120%;
+            width: 40%;
+            #sidebar_close{
+                right: 1rem;
+                display: block;
+                text-align: right;
+                margin-right: 0.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 20px;
+            }
+            .sidebar_entry{
+                border-bottom: solid 1px gainsboro;
+                padding-left: 1rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                span{
+                    color: black;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                }
+            }
+            .sidebar_entry_copy{
+                @extend .sidebar_entry;
+            }
+            .treatments_dropdown{
+                display: none;
+                flex-direction: column;
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 16px;
+                    border-bottom: solid 1px gainsboro;
+                    padding-left: 2rem;
+                    color: black;
+                }
+            }
+        }
+    }
+    
+}
+
+.phone_and_tab_nav {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    height:58px;
+    width: 100%;
+    background-color: white;
+    #brand_logo{
+        @media screen and (min-width:768px){
+            margin-left: 1rem;
+        }
+    }
+    .right_aligned{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 1rem;
+        #sidebar_toggle{
+            font-size: 20px;
+            display: block;
+        }
+        .profile_dropdown{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 1rem;
+            img{
+                object-fit: cover;
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+            }
+            #profile_picture_dropwdown_icon{
+                position: absolute;
+                bottom: -8px;
+                right: 14px;
+                display: block;
+                font-size: 10px;
+                z-index: 12;
+            }
+            .profile_dropdown_options{
+                    display: none;
+                    position: absolute;
+                    top: 3.2rem;
+                    right: -2.5rem;
+                    flex-direction: column;
+                    align-items: center;
+                    background: white;
+                    width: 10rem;
+                    z-index: 15;
+                    span{
+                        display: block;
+                        width: 10rem;
+                        text-align: center;
+                        margin-top: 0.5rem;
+                        font-size: 12px;
+                        color: black;
+                        font-family: TheLightFont;
+                        height: auto;
+                    }
+                    hr{
+                        margin: 0.5rem 0rem 0rem 0rem;
+                        background-color: gainsboro;
+                        height: 1px;
+                        width: 100%;
+                    }
+                    .profile_block{
+                        border-bottom: solid 1px gainsboro;
+                        padding: 0.5rem;
+                        width: 10rem;
+                        display: grid;
+                        grid-template-areas: 
+                        "picture name"
+                        "picture number";
+                        justify-content: space-between;
+                        .navbar_profile_picture{
+                            grid-area: picture;
+                            width: 30px;
+                            height: 30px;
+                            object-fit: cover;
+                            margin-left: 0px;
+                        }
+                        .navbar_username{
+                            grid-area: name;
+                            color: rgb(15, 103, 190);
+                            font-size: 14px;
+                            display: block;
+                            text-align: left;
+                            font-family: TheBoldFont;
+                            width: auto;
+                        }
+                        .navbar_user_mobile_number{
+                            grid-area: number;
+                            font-family: TheLightFont;
+                            font-size: 14px;
+                            display: block;
+                            text-align: left;
+                            color: black;
+                            width: auto;
+                        }
+                    }
+            }
+        }
+        @media screen and (min-width:768px){
+            margin-right: 2rem;
+        }
+    }
+    
+}
+
+.laptop_nav{
+    display: none;
+}
+
+
+ol{
+    width: 100%;
+    list-style: none;
+    li{
+        &.bordered{
+            padding: 19px 0px 17px 10px;
+            border: solid 1px rgb(8,16,56);
+            border-radius: 4px;
+            height: 50px;
+            margin: 30px 0 0px 0;
+            text-align: left;
+            font-size: 18px;
+            line-height: 12px;
+            font-family: TheBoldFont;
+        }
+
+        &.selected {
+            color: rgb(35,40,64);
+           
+            b{
+                color: dodgerblue;
+            }
+
+        }     
+
+        &.not_selected {
+            color: gainsboro;
+            b{
+                color:gainsboro;
+            }
+        }   
+    }
+}
+
+footer{
+    border-bottom: solid 6px dodgerblue;
+    @include darkblueback();
+    width: 100%;
+    padding: 35px 15px 15px 15px;
+    img{
+        height:40px;
+        width:155px;
+        margin-bottom: 5px;
+    }
+    .footer_flex_mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        span{
+            font-family: TheLightFont;
+            color: gainsboro;
+            margin:8px;
+            font-size: 14px;
+        }
+        .footer_end{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+        }
+        i{
+            font-size: 13px;
+        }
+    }
+    .footer_flex_tab_laptop{
+        display: none;
+    }
+    @media screen and (min-width:768px){
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @media screen and (min-width:1024px){
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+
+@media screen and (min-width:735px){
+    .phone_and_tab_nav{
+        #brand_logo{
+            margin-left: 1rem;
+        }
+    }
+    footer{
+        font-family: TheLightFont;
+        font-size: 14px;
+        width: 100%;
+        background-color: white;
+        padding: 2rem;
+        .footer_flex_mobile{
+            display: none;
+        }
+
+        .footer_flex_tab_laptop{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            // justify-content: space-between;
+            .footer_flex_inner_one{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .footer_flex_inner_one_left{
+                    width: 400px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    span{
+                        color: black;
+                    }
+                }
+            }
+            .footer_flex_inner_two{
+                margin-top: 2rem;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width:1300px){
+    .phone_and_tab_nav{
+        display: none;
+    }
+    .laptop_nav{
+        width: 100%;
+        max-width: 1440px;
+        background-color: white;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 10;
+        height:80px;
+        padding: 0rem 6rem;
+        img{
+            width:170px;
+        }
+        .nav_links{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            p{
+                font-family: TheLightFont;
+                margin: 0px 1rem;
+                font-size: 14px;
+            }
+            .treatment_container{
+                position: relative;
+                .treatment_dropdown{
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: gainsboro;
+                    position: absolute;
+                    top: 1rem;
+                    right: -1.5rem;
+                    width: 12rem;
+                    border-radius: 8px;
+                    a{
+                        span{
+                            width: 100%;
+                            color:#0c1552;
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 14px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+            .treatment_container:hover .treatment_dropdown{
+                display: flex;
+            }
+        }
+        .nav_buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            .tvastra_plus{
+                background-color: rgb(59,122,189);
+                color: white;
+                border: none;
+                font-family: TheLightFont;
+                padding:0px 20px;
+                border-radius: 5px;
+                font-size: 14px;
+                margin:2px;
+                height:2.5rem;
+                // letter-spacing: 1px;
+            }
+            .login_button{
+                background-color: rgb(59,122,189);
+                color: white;
+                border: none;
+                font-family: TheLightFont;
+                padding:0px 20px;
+                border-radius: 5px;
+                font-size: 14px;
+                margin:2px;
+                height:2.5rem;
+            }
+            .get_quote_button{
+                font-family: TheLightFont;
+                // letter-spacing: 1px;
+                color: white;
+                border: none;
+                padding:0px 20px;
+                background-color: rgb(42,45,62);
+                font-size: 14px;
+                margin:2px;
+                margin-left: 0.5rem;
+                border-radius: 5px;
+                height: 2.5rem;
+            }
+            .container_element{
+                .loggedinuser{
+                    margin-left: 1rem;
+                    font-family: TheLightFont;
+                    font-size: 15px;
+                    i{
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+            .user_dropdown{
+                display: none;
+                max-height: 0px;
+                overflow: hidden;
+                opacity: 0.1;
+                transition: max-height 0.2s,opacity 0.4s ease-out;
+                .dropdown_options{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background: white;
+                    width: 15rem;
+                    span{
+                        display: flex;
+                        width: 15rem;
+                        text-align: center;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 0.5rem;
+                        font-size: 14px;
+                        color: black;
+                        font-family: TheLightFont;
+                        height: 1.5rem;
+                        transition: 0.4s;
+                    }
+                    .option_hover:hover {
+                        background-color: gainsboro;
+                        border-left: solid 3px blue;
+                        font-size: 16px;
+                    }
+                    hr{
+                        margin: 0.5rem 0rem 0rem 0rem;
+                        background-color: gainsboro;
+                        height: 1px;
+                        width: 100%;
+                    }
+                    .profile_block{
+                        border-bottom: solid 1px gainsboro;
+                        padding: 0.5rem;
+                        width: 15rem;
+                        display: grid;
+                        grid-template-areas: 
+                        "picture name"
+                        "picture number";
+                        justify-content: space-between;
+                        .navbar_profile_picture{
+                            grid-area: picture;
+                            width: 60px;
+                            height: 60px;
+                            object-fit: cover;
+                            margin-left: 0px;
+                        }
+                        .navbar_username{
+                            grid-area: name;
+                            color: rgb(15, 103, 190);
+                            font-size: 16px;
+                            display: block;
+                            text-align: left;
+                            font-family: TheBoldFont;
+                            width: auto;
+                        }
+                        .navbar_user_mobile_number{
+                            grid-area: number;
+                            font-family: TheLightFont;
+                            font-size: 16px;
+                            display: block;
+                            text-align: left;
+                            color: black;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .loggedinuser:hover{
+                background-color: gainsboro;
+                
+            }
+            
+            .container_element:hover > .user_dropdown{
+                display: block;
+                height: 291px;
+                max-height: 291px;
+                opacity: 1;
+                position: absolute;
+                top: 2.9rem;
+                z-index: 100;
+                right: 0rem;
+            }
+        }
+        
+    }
+    footer{
+        padding-left: 6rem;
+        padding-right: 6rem;
+        font-size: 16px;
+    }
+}
+

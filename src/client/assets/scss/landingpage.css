@@ -1,0 +1,1857 @@
+nav {
+  max-width: 1440px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(110, 109, 109, 0.582);
+          box-shadow: inset 0 0 5px rgba(110, 109, 109, 0.582);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 114, 114, 0.699);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777272;
+}
+
+.siteflow {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 1366px) {
+  .siteflow {
+    min-width: 1349px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .siteflow {
+    min-width: 1440px;
+  }
+}
+
+.siteflow .message {
+  background-color: white;
+  position: absolute;
+  top: 6rem;
+  height: 4rem;
+  padding: 0.5rem 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px auto 20px;
+      grid-template-columns: 40px auto 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+      grid-template-areas: "big_icon heading small_icon" "big_icon message small_icon";
+}
+
+.siteflow .message .big_icon {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: big_icon;
+  font-size: 40px;
+}
+
+.siteflow .message .small_icon {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: small_icon;
+  font-size: 20px;
+}
+
+.siteflow .message h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: heading;
+  text-align: left;
+  font-size: 16px;
+}
+
+.siteflow .message span {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: message;
+  font-family: TheLightFont;
+  font-size: 12px;
+}
+
+.siteflow .incorrect {
+  border-left: solid 4px red;
+}
+
+.siteflow .incorrect .big_icon {
+  color: red;
+}
+
+.siteflow .incorrect h2 {
+  color: red;
+}
+
+.siteflow .incorrect span {
+  color: red;
+}
+
+.siteflow .success {
+  border-left: solid 4px green;
+  top: 7rem;
+}
+
+.siteflow .success .big_icon {
+  color: green;
+}
+
+.siteflow .success h2 {
+  color: green;
+}
+
+.siteflow .success span {
+  color: green;
+}
+
+p {
+  font-family: TheLightFont;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 50;
+  color: #0c1552;
+}
+
+h2 {
+  font-family: TheBoldFont;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #0c1552;
+}
+
+h3 {
+  font-family: TheBoldFont;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  color: #0c1552;
+}
+
+p .doctordescription {
+  font-family: Jansta;
+  font-size: 14px;
+}
+
+body {
+  background-color: white;
+  position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+  body .container {
+    max-width: 1440px;
+    margin: 0rem auto;
+    padding: 0px;
+  }
+}
+
+body .sidebar_shade {
+  display: none;
+  position: absolute;
+  right: -100%;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.712);
+}
+
+body .sidebar_shade .sidebar {
+  padding-top: 1rem;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+  height: 120%;
+  width: 40%;
+}
+
+body .sidebar_shade .sidebar #sidebar_close {
+  right: 1rem;
+  display: block;
+  text-align: right;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+body .sidebar_shade .sidebar .sidebar_entry, body .sidebar_shade .sidebar .sidebar_entry_copy {
+  border-bottom: solid 1px gainsboro;
+  padding-left: 1rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .sidebar_shade .sidebar .sidebar_entry span, body .sidebar_shade .sidebar .sidebar_entry_copy span {
+  color: black;
+  font-family: TheLightFont;
+  font-size: 18px;
+}
+
+body .sidebar_shade .sidebar .treatments_dropdown {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .sidebar_shade .sidebar .treatments_dropdown span {
+  display: block;
+  font-family: TheLightFont;
+  font-size: 16px;
+  border-bottom: solid 1px gainsboro;
+  padding-left: 2rem;
+  color: black;
+}
+
+.phone_and_tab_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  height: 58px;
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .phone_and_tab_nav #brand_logo {
+    margin-left: 1rem;
+  }
+}
+
+.phone_and_tab_nav .right_aligned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
+}
+
+.phone_and_tab_nav .right_aligned #sidebar_toggle {
+  font-size: 20px;
+  display: block;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown #profile_picture_dropwdown_icon {
+  position: absolute;
+  bottom: -8px;
+  right: 14px;
+  display: block;
+  font-size: 10px;
+  z-index: 12;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options {
+  display: none;
+  position: absolute;
+  top: 3.2rem;
+  right: -2.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  width: 10rem;
+  z-index: 15;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options span {
+  display: block;
+  width: 10rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: black;
+  font-family: TheLightFont;
+  height: auto;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options hr {
+  margin: 0.5rem 0rem 0rem 0rem;
+  background-color: gainsboro;
+  height: 1px;
+  width: 100%;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block {
+  border-bottom: solid 1px gainsboro;
+  padding: 0.5rem;
+  width: 10rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "picture name" "picture number";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_profile_picture {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: picture;
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 0px;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_username {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  color: #0f67be;
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  font-family: TheBoldFont;
+  width: auto;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_user_mobile_number {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: number;
+  font-family: TheLightFont;
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  color: black;
+  width: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .phone_and_tab_nav .right_aligned {
+    margin-right: 2rem;
+  }
+}
+
+.laptop_nav {
+  display: none;
+}
+
+ol {
+  width: 100%;
+  list-style: none;
+}
+
+ol li.bordered {
+  padding: 19px 0px 17px 10px;
+  border: solid 1px #081038;
+  border-radius: 4px;
+  height: 50px;
+  margin: 30px 0 0px 0;
+  text-align: left;
+  font-size: 18px;
+  line-height: 12px;
+  font-family: TheBoldFont;
+}
+
+ol li.selected {
+  color: #232840;
+}
+
+ol li.selected b {
+  color: dodgerblue;
+}
+
+ol li.not_selected {
+  color: gainsboro;
+}
+
+ol li.not_selected b {
+  color: gainsboro;
+}
+
+footer {
+  border-bottom: solid 6px dodgerblue;
+  background-color: #151f3b;
+  width: 100%;
+  padding: 35px 15px 15px 15px;
+}
+
+footer img {
+  height: 40px;
+  width: 155px;
+  margin-bottom: 5px;
+}
+
+footer .footer_flex_mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer_flex_mobile span {
+  font-family: TheLightFont;
+  color: gainsboro;
+  margin: 8px;
+  font-size: 14px;
+}
+
+footer .footer_flex_mobile .footer_end {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+footer .footer_flex_mobile i {
+  font-size: 13px;
+}
+
+footer .footer_flex_tab_laptop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media screen and (min-width: 735px) {
+  .phone_and_tab_nav #brand_logo {
+    margin-left: 1rem;
+  }
+  footer {
+    font-family: TheLightFont;
+    font-size: 14px;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+  }
+  footer .footer_flex_mobile {
+    display: none;
+  }
+  footer .footer_flex_tab_laptop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one .footer_flex_inner_one_left {
+    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one .footer_flex_inner_one_left span {
+    color: black;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_two {
+    margin-top: 2rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .phone_and_tab_nav {
+    display: none;
+  }
+  .laptop_nav {
+    width: 100%;
+    max-width: 1440px;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    height: 80px;
+    padding: 0rem 6rem;
+  }
+  .laptop_nav img {
+    width: 170px;
+  }
+  .laptop_nav .nav_links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .laptop_nav .nav_links p {
+    font-family: TheLightFont;
+    margin: 0px 1rem;
+    font-size: 14px;
+  }
+  .laptop_nav .nav_links .treatment_container {
+    position: relative;
+  }
+  .laptop_nav .nav_links .treatment_container .treatment_dropdown {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: gainsboro;
+    position: absolute;
+    top: 1rem;
+    right: -1.5rem;
+    width: 12rem;
+    border-radius: 8px;
+  }
+  .laptop_nav .nav_links .treatment_container .treatment_dropdown a span {
+    width: 100%;
+    color: #0c1552;
+    display: block;
+    font-family: TheLightFont;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .laptop_nav .nav_links .treatment_container:hover .treatment_dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .laptop_nav .nav_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .laptop_nav .nav_buttons .tvastra_plus {
+    background-color: #3b7abd;
+    color: white;
+    border: none;
+    font-family: TheLightFont;
+    padding: 0px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 2px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .login_button {
+    background-color: #3b7abd;
+    color: white;
+    border: none;
+    font-family: TheLightFont;
+    padding: 0px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 2px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .get_quote_button {
+    font-family: TheLightFont;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    background-color: #2a2d3e;
+    font-size: 14px;
+    margin: 2px;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .container_element .loggedinuser {
+    margin-left: 1rem;
+    font-family: TheLightFont;
+    font-size: 15px;
+  }
+  .laptop_nav .nav_buttons .container_element .loggedinuser i {
+    margin-left: 0.5rem;
+  }
+  .laptop_nav .nav_buttons .user_dropdown {
+    display: none;
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0.1;
+    -webkit-transition: max-height 0.2s,opacity 0.4s ease-out;
+    transition: max-height 0.2s,opacity 0.4s ease-out;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: white;
+    width: 15rem;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 15rem;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: black;
+    font-family: TheLightFont;
+    height: 1.5rem;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .option_hover:hover {
+    background-color: gainsboro;
+    border-left: solid 3px blue;
+    font-size: 16px;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options hr {
+    margin: 0.5rem 0rem 0rem 0rem;
+    background-color: gainsboro;
+    height: 1px;
+    width: 100%;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block {
+    border-bottom: solid 1px gainsboro;
+    padding: 0.5rem;
+    width: 15rem;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "picture name" "picture number";
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_profile_picture {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: picture;
+    width: 60px;
+    height: 60px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-left: 0px;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_username {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: name;
+    color: #0f67be;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    font-family: TheBoldFont;
+    width: auto;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_user_mobile_number {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: number;
+    font-family: TheLightFont;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    color: black;
+    width: auto;
+  }
+  .laptop_nav .nav_buttons .loggedinuser:hover {
+    background-color: gainsboro;
+  }
+  .laptop_nav .nav_buttons .container_element:hover > .user_dropdown {
+    display: block;
+    height: 291px;
+    max-height: 291px;
+    opacity: 1;
+    position: absolute;
+    top: 2.9rem;
+    z-index: 100;
+    right: 0rem;
+  }
+  footer {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    font-size: 16px;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: TheBoldFont;
+  src: url("../fonts/TheBoldFont.otf");
+}
+
+@font-face {
+  font-family: TheLightFont;
+  src: url("../fonts/TheLightFont.otf");
+}
+
+@font-face {
+  font-family: karla;
+  src: url("../fonts/OKCKUL+Karla-Regular.ttf");
+}
+
+button {
+  cursor: pointer;
+}
+
+.siteflow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.FindHealthcare {
+  background-color: #94bedd;
+  padding: 35px 15px;
+  margin-top: 58px;
+  width: 100%;
+}
+
+.FindHealthcare p {
+  margin-top: 30px;
+}
+
+.FindHealthcare .locationinput {
+  background-color: white;
+  margin-top: 25px;
+  height: 50px;
+  padding: 0rem 1rem;
+}
+
+.FindHealthcare .locationinput input {
+  border: none;
+  width: 85%;
+  text-align: left;
+  height: 100%;
+  padding-left: 1rem;
+  outline: none;
+}
+
+.FindHealthcare .locationinput input::-webkit-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .locationinput input:-ms-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .locationinput input::-ms-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .locationinput input::placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .locationinput i {
+  background-color: white;
+  margin-top: 5px;
+  height: 17px;
+}
+
+.FindHealthcare .gpsicon {
+  background-color: white;
+  width: 17px;
+  height: 17px;
+}
+
+.FindHealthcare .DoctorSearch {
+  background-color: white;
+  margin-top: 10px;
+  height: 50px;
+  padding: 0px;
+}
+
+.FindHealthcare .DoctorSearch input {
+  padding-left: 1rem;
+  text-align: left;
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.FindHealthcare .DoctorSearch input::-webkit-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .DoctorSearch input:-ms-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .DoctorSearch input::-ms-input-placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .DoctorSearch input::placeholder {
+  color: #cccaca;
+}
+
+.FindHealthcare .buttoncontainer {
+  width: 150px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.FindHealthcare .buttoncontainer .buttoninput {
+  background-color: #151f3b;
+  font-family: TheLightFont;
+  height: 40px;
+  width: 150px;
+  border: none;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 14px;
+  position: relative;
+  bottom: 2px;
+}
+
+.HowItWorks {
+  background-color: white;
+  padding: 15px;
+}
+
+.HowItWorks h2 {
+  margin-top: 20px;
+}
+
+.HowItWorks p {
+  margin: 1rem 0 0px 0;
+}
+
+.HowItWorks ol {
+  width: 100%;
+  list-style: none;
+}
+
+.HowItWorks ol li.bordered {
+  cursor: pointer;
+  padding: 19px 0px 17px 10px;
+  border: solid 1px #081038;
+  border-radius: 4px;
+  height: 50px;
+  margin: 30px 0 0px 0;
+  text-align: left;
+  font-size: 18px;
+  line-height: 12px;
+  font-family: TheBoldFont;
+}
+
+.HowItWorks ol li.bordered span {
+  color: gainsboro;
+}
+
+.HowItWorks ol li.bordered b {
+  color: gainsboro;
+}
+
+.HowItWorks ol li.selected span {
+  color: #232840;
+}
+
+.HowItWorks ol li.selected b {
+  color: dodgerblue;
+}
+
+.HowItWorks .mobile_view_image_container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.HowItWorks .mobile_view_image_container .mobile_view_image {
+  display: block;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 312px;
+  margin-top: 30px;
+}
+
+.HowItWorks .mobile_view_image_container b {
+  font-family: TheBoldFont;
+  color: #0c1552;
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 12px;
+  text-align: center;
+}
+
+.HowItWorks .mobile_view_image_container p {
+  margin-top: 1rem;
+}
+
+.HowItWorks .tab_laptop_view_image {
+  display: none;
+}
+
+.world_class {
+  background-color: #22273f;
+  margin-top: 30px;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.world_class h3 {
+  color: white;
+}
+
+.world_class p {
+  color: white;
+  margin-top: 20px;
+}
+
+.world_class img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 15px;
+  width: 330px;
+  height: 350px;
+}
+
+.world_class .doctor_card {
+  display: none;
+}
+
+.world_class .active_doctor_card {
+  display: block;
+}
+
+.world_class .doctordescription {
+  background-color: white;
+  margin-top: 0px;
+  padding: 5px 0px 15px 0px;
+  width: 330px;
+  position: relative;
+  bottom: 3px;
+  border-bottom: solid 3px lightblue;
+}
+
+.world_class .doctordescription b {
+  color: dodgerblue;
+  position: relative;
+  top: 3px;
+  font-size: 16px;
+  font-family: TheBoldFont;
+  text-align: left;
+}
+
+.world_class .doctordescription .dashline {
+  color: dodgerblue;
+  display: inline-block;
+  margin: 0px;
+  height: 2px;
+  width: 30px;
+  border: none;
+  background-color: dodgerblue;
+  text-align: left;
+}
+
+.world_class .doctordescription span {
+  font-family: TheLightFont;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 33px;
+}
+
+.world_class .navigation_dots {
+  display: none;
+}
+
+.featured_medical {
+  background-color: white;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.featured_medical h3 {
+  margin-top: 15px;
+}
+
+.featured_medical p {
+  margin-top: 15px;
+  margin-bottom: 0rem;
+}
+
+.featured_medical img {
+  margin-top: -350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 330px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured_medical .dentistry, .featured_medical .cancer, .featured_medical .cardiology, .featured_medical .multi_organ, .featured_medical .orthopedics, .featured_medical .infertility {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 330px;
+  height: 350px;
+  position: relative;
+  top: 15px;
+  z-index: 2;
+}
+
+.featured_medical .dentistry span, .featured_medical .cancer span, .featured_medical .cardiology span, .featured_medical .multi_organ span, .featured_medical .orthopedics span, .featured_medical .infertility span {
+  position: relative;
+  top: 290px;
+  left: 15px;
+}
+
+.featured_medical .dentistry .headingspan, .featured_medical .cancer .headingspan, .featured_medical .cardiology .headingspan, .featured_medical .multi_organ .headingspan, .featured_medical .orthopedics .headingspan, .featured_medical .infertility .headingspan {
+  color: white;
+  font-family: TheLightFont;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.featured_medical .dentistry .descspan, .featured_medical .cancer .descspan, .featured_medical .cardiology .descspan, .featured_medical .multi_organ .descspan, .featured_medical .orthopedics .descspan, .featured_medical .infertility .descspan {
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+
+.featured_medical .treatment_card {
+  margin-top: 1rem;
+}
+
+.featured_medical .cancer {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.featured_medical .cardiology {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.featured_medical .multi_organ {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.featured_medical .orthopedics {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.featured_medical .infertility {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(2, 0, 36, 0.911)), color-stop(20%, rgba(2, 0, 36, 0.7)), color-stop(50%, rgba(0, 212, 255, 0))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+  background: linear-gradient(0deg, rgba(2, 0, 36, 0.911) 0%, rgba(2, 0, 36, 0.7) 20%, rgba(0, 212, 255, 0) 50%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.exclusive_services {
+  background-color: whitesmoke;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.exclusive_services p {
+  margin-top: 15px;
+}
+
+.exclusive_services .services_flex {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+.exclusive_services .services_flex .service {
+  margin: 5px;
+  width: 150px;
+  border: solid 1px white;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+}
+
+.exclusive_services .services_flex .service img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75px;
+  width: 60px;
+}
+
+.exclusive_services .services_flex .service span {
+  display: block;
+  font-family: TheBoldFont;
+  font-size: 13px;
+  text-align: center;
+  color: #7e6060;
+}
+
+.need_help {
+  padding: 35px 15px 35px 15px;
+  background-color: #7ab0d4;
+  width: 100%;
+}
+
+.need_help .need_help_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.need_help .need_help_flex h3 {
+  color: white;
+}
+
+.need_help .need_help_flex p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.need_help .need_help_flex button {
+  padding: 0rem 1rem;
+  font-family: TheLightFont;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: block;
+  background-color: #0173b2;
+  color: white;
+  border: solid 1px transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 8px;
+  height: 3rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 735px) {
+  .FindHealthcare {
+    padding: 2rem;
+  }
+  .FindHealthcare p {
+    margin-bottom: 0px;
+  }
+  .FindHealthcare .locationinput {
+    display: inline-block;
+    width: 230px;
+  }
+  .FindHealthcare .locationinput input {
+    width: 80%;
+  }
+  .FindHealthcare .DoctorSearch {
+    display: inline-block;
+    width: 350px;
+    margin-left: -3px;
+    margin-top: 25px;
+  }
+  .FindHealthcare .buttoncontainer {
+    width: 120px;
+    display: inline-block;
+    margin-top: 25px;
+    margin-left: -3px;
+    margin-right: 0px;
+    height: 50px;
+    padding: 0px;
+  }
+  .FindHealthcare .buttoncontainer .buttoninput {
+    height: 50px;
+    padding: 10px 6px;
+  }
+  .HowItWorks {
+    padding: 2rem;
+  }
+  .HowItWorks h2 {
+    margin-top: 0rem;
+  }
+  .HowItWorks ol {
+    margin-top: 15px;
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 0px;
+  }
+  .HowItWorks ol li.bordered {
+    margin-top: 15px;
+  }
+  .HowItWorks .mobile_view_image_container {
+    display: none;
+  }
+  .HowItWorks .tab_laptop_view_image {
+    margin-top: 15px;
+    padding: 30px;
+    padding-right: 0px;
+    display: inline-block;
+    width: 50%;
+  }
+  .HowItWorks .tab_laptop_view_image img {
+    display: block;
+    width: 300px;
+    height: 312px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .HowItWorks .tab_laptop_view_image b {
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 12px;
+    font-family: TheBoldFont;
+  }
+  .HowItWorks .tab_laptop_view_image p {
+    margin-top: 15px;
+  }
+  .world_class {
+    margin-top: 0rem;
+    padding: 30px;
+  }
+  .world_class h3 {
+    margin-bottom: 0rem;
+  }
+  .world_class p {
+    margin-bottom: 0rem;
+  }
+  .world_class .flex_view_doctors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .world_class .flex_view_doctors .doctor_card {
+    display: none;
+    margin: 5px;
+    width: 335px;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription {
+    padding-bottom: 0rem;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription span {
+    position: relative;
+    bottom: 1rem;
+  }
+  .world_class .flex_view_doctors .doctor_card .three_liner {
+    padding-bottom: 1.5rem;
+  }
+  .world_class .flex_view_doctors .active_doctor_card {
+    display: block;
+  }
+  .featured_medical {
+    padding: 2rem;
+  }
+  .featured_medical h3 {
+    margin: 0rem;
+  }
+  .featured_medical p {
+    margin-bottom: 0rem;
+  }
+  .featured_medical .flex_view_treatments {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .featured_medical .flex_view_treatments .treatment_card {
+    margin: 8px;
+  }
+  .exclusive_services {
+    margin-top: 0rem;
+    padding: 2rem;
+  }
+  .exclusive_services .services_flex {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+  .exclusive_services .services_flex .service {
+    width: 220px;
+  }
+  .need_help {
+    padding: 30px;
+  }
+  .need_help h3 {
+    margin-bottom: 0px;
+  }
+  .need_help p {
+    margin-bottom: 0px;
+  }
+  .need_help button {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .FindHealthcare {
+    padding: 7rem 6rem;
+    margin-top: 80px;
+    background-size: cover;
+    background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg);
+    background-repeat: no-repeat;
+    height: 425px;
+    width: 100%;
+  }
+  .FindHealthcare h2 {
+    color: #2a2d3e;
+    text-align: left;
+    font-size: 40px;
+    font-weight: bolder;
+  }
+  .FindHealthcare p {
+    margin-top: 15px;
+    text-align: left;
+  }
+  .FindHealthcare .locationinput {
+    margin-top: 32px;
+  }
+  .FindHealthcare .DoctorSearch {
+    margin-top: 32px;
+  }
+  .HowItWorks {
+    padding: 4rem 6rem;
+    width: 100%;
+  }
+  .HowItWorks h2 {
+    text-align: left;
+    font-size: 40px;
+  }
+  .HowItWorks p {
+    text-align: left;
+  }
+  .HowItWorks ol {
+    width: 425px;
+  }
+  .HowItWorks ol li.bordered {
+    height: 100px;
+    padding: 45px 0px 30px 20px;
+    border-color: #dfdfdf;
+  }
+  .HowItWorks ol li.bordered b {
+    font-size: 25px;
+    margin-right: 20px;
+  }
+  .HowItWorks ol li.bordered span {
+    font-size: 25px;
+  }
+  .HowItWorks ol li.selected {
+    border-color: #9cbfda;
+  }
+  .HowItWorks ol li.selected b {
+    color: #9cbfda;
+  }
+  .HowItWorks .mobile_view_image {
+    display: none;
+  }
+  .HowItWorks .tab_laptop_view_image {
+    margin-left: 120px;
+    width: 600px;
+  }
+  .HowItWorks .tab_laptop_view_image img {
+    width: 550px;
+    height: 580px;
+  }
+  .HowItWorks .tab_laptop_view_image b {
+    margin-top: 40px;
+  }
+  .HowItWorks .tab_laptop_view_image .li_description {
+    text-align: center;
+  }
+  .world_class {
+    padding: 4rem 6rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .world_class h3 {
+    font-size: 40px;
+    text-align: left;
+  }
+  .world_class p {
+    text-align: left;
+  }
+  .world_class .flex_view_doctors {
+    margin-top: 2rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+  .world_class .flex_view_doctors .doctor_card {
+    width: 285px;
+    height: 400px;
+  }
+  .world_class .flex_view_doctors .doctor_card img {
+    width: 280px;
+    height: 285px;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription {
+    width: 280px;
+    height: 115px;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription b {
+    color: #4b7cc0;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription .space_removal {
+    display: none;
+  }
+  .world_class .flex_view_doctors .doctor_card .doctordescription span {
+    position: static;
+  }
+  .world_class .navigation_dots {
+    display: block;
+    margin-top: 3rem;
+    margin-left: 4rem;
+  }
+  .world_class .navigation_dots .dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .world_class .navigation_dots .selected {
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    border: solid 2px blue;
+    position: relative;
+    top: 1px;
+  }
+  .featured_medical {
+    padding: 4rem 6rem;
+    width: 100%;
+  }
+  .featured_medical h3 {
+    width: 100%;
+    text-align: left;
+    font-size: 40px;
+  }
+  .featured_medical p {
+    width: 100%;
+    text-align: left;
+  }
+  .featured_medical .flex_view_treatments {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+    row-gap: 10px;
+        grid-template-areas: "dentistry cancer cardiology" "multi_organ cancer cardiology" "multi_organ cancer infertility" "multi_organ cancer infertility" "multi_organ orthopedics infertility";
+  }
+  .featured_medical .flex_view_treatments .treatment_card {
+    margin: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+  .featured_medical .flex_view_treatments span {
+    position: static;
+  }
+  .featured_medical .flex_view_treatments .dentistry, .featured_medical .flex_view_treatments .cancer, .featured_medical .flex_view_treatments .cardiology, .featured_medical .flex_view_treatments .multi_organ, .featured_medical .flex_view_treatments .orthopedics, .featured_medical .flex_view_treatments .infertility {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: dentistry;
+    width: 390px;
+    height: 240px;
+  }
+  .featured_medical .flex_view_treatments .cancer {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 2;
+    grid-area: cancer;
+    height: 385px;
+    width: 372px;
+  }
+  .featured_medical .flex_view_treatments .cardiology {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: cardiology;
+    height: 340px;
+    width: 372px;
+  }
+  .featured_medical .flex_view_treatments .multi_organ {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 1;
+    grid-area: multi_organ;
+    height: 535px;
+    width: 390px;
+  }
+  .featured_medical .flex_view_treatments .orthopedics {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    grid-area: orthopedics;
+    height: 385px;
+    width: 372px;
+  }
+  .featured_medical .flex_view_treatments .infertility {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+    grid-area: infertility;
+    height: 435px;
+    width: 372px;
+  }
+  .featured_medical .navigation_dots_featured {
+    display: block;
+    margin-left: -57rem;
+    margin-top: 2rem;
+  }
+  .featured_medical .navigation_dots_featured .dot_featured {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .featured_medical .navigation_dots_featured .selected_featured {
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    border: solid 2px blue;
+    position: relative;
+    top: 1px;
+  }
+  .exclusive_services {
+    padding: 4rem 6rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  .exclusive_services h3 {
+    text-align: left;
+    font-size: 40px;
+  }
+  .exclusive_services p {
+    text-align: left;
+  }
+  .exclusive_services .services_flex {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+    -ms-grid-columns: auto auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto;
+  }
+  .exclusive_services .services_flex .service {
+    border-radius: 2px;
+    width: 190px;
+    height: 180px;
+    padding: 25px 15px 15px 15px;
+  }
+  .need_help {
+    padding: 4rem 6rem;
+    background-color: #9cbfda;
+    width: 100%;
+  }
+  .need_help .need_help_flex {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .need_help .need_help_flex .need_help_left_div h3 {
+    font-size: 40px;
+    text-align: left;
+  }
+  .need_help .need_help_flex button {
+    width: 14rem;
+    height: 65px;
+    display: block;
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=landingpage.css.map */

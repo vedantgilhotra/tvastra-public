@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Appointment</title>
+    <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+    <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+    <link href="/scss/appointment.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="phone_and_tab_nav">
+        <a href="/"><img id="brand_logo" src="/images/logo.png" alt="Brand Logo"></a>
+        
+        <div class="right_aligned">
+            <div class="profile_dropdown">
+                <% if(user.profile_picture) {%>
+                    <img src="<%= user.profile_picture %>">
+                <% } %>
+                <% if(!user.profile_picture) {%>
+                    <img src="https://tvastra-profile-pictures.s3.ap-south-1.amazonaws.com/iconfinder_user_1608727.png">
+                <% } %>
+                <i class="fas fa-chevron-down" id="profile_picture_dropwdown_icon"></i>
+                <div class="profile_dropdown_options">
+                    <% if(user.is_doctor==false) {%>
+                        <a href="/user_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    <% if(user.is_doctor==true) {%>
+                        <a href="/doctor_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    
+                    <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                    <hr>
+                    <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                    <hr>
+                    <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                    <hr>
+                    <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                    <hr>
+                    <a href="/logout"><span class="option_hover">Logout</span></a>
+                    <hr>
+                </div>
+            </div>
+            <i id="sidebar_toggle" class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <nav class="laptop_nav">
+    
+        <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+
+        <div class="nav_links">
+            <a href="/doctor"><p>Doctors</p></a>
+            <a href="/hospital"><p>Hospitals</p></a>
+            <div class="treatment_container">
+                <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                <div class="treatment_dropdown">
+                    <a href="/dentistry"><span>Dentistry</span></a>
+                    <a href="/dentistry"><span>Cancer</span></a>
+                    <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                    <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                    <a href="/dentistry"><span>Infertility Treatment</span></a>
+                </div>
+            </div>
+            <a href="/aboutus"><p>About</p></a>
+            
+        </div>
+        <% if(loggedinstatus == false) {%>
+        <div class="nav_buttons">
+            <a href="/email_login"><button type="button" id="login_button" class="login_button">Login/Sign Up</button></a>
+
+            <button type="button" class="get_quote_button">Get a Quote</button>
+        </div>
+        <% } %>
+        <% if(loggedinstatus == true) {%>
+            <div class="nav_buttons">
+                <a href="#"><button type="button" id="tvastra_plus" class="tvastra_plus">Tvastra Plus</button></a>
+                <button type="button" class="get_quote_button">Get a Quote</button>
+                <div class="container_element">
+                    <span class="loggedinuser"><%=  user.name %><i class="fas fa-chevron-down"></i></span>
+                    <div class="user_dropdown">
+                        <div class="dropdown_options">
+                            <% if(user.is_doctor==false) {%>
+                                <a href="/user_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            <% if(user.is_doctor==true) {%>
+                                <a href="/doctor_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            
+                            <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                            <hr>
+                            <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                            <hr>
+                            <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                            <hr>
+                            <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                            <hr>
+                            <a href="/logout"><span class="option_hover">Logout</span></a>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </nav>
+    
+    <div class="siteflow">
+        <section class="appointment_box">
+            <h2>Book an Appointment</h2>
+            <hr>
+            <div class="appointment_box_inner">
+                <label for="date">Select Appointment Date*</label>
+                <input type="date" required name="date" id="date" autocfocus>
+
+                <label id="time_interval_label">Time Interval*</label>
+                <div class="options_grid">
+                    <input type="radio" id="morning" name="time_interval" value="morning">
+                    <label for="morning">Morning</label>
+
+                    <input type="radio" id="afternoon" name="time_interval" value="afternoon">
+                    <label for="afternoon">Afternoon</label>
+
+                    <input type="radio" id="evening" name="time_interval" value="evening">
+                    <label for="evening">Evening</label>
+                </div>
+
+                <label>Appointment Status / Urgency</label>
+
+                <div class="options_grid">
+                    <input type="radio" id="routine" name="appointment_type" value="routine">
+                    <label for="routine">Routine Check-up</label>
+
+                    <input type="radio" id="non_urgent" name="appointment_type" value="non_urgent">
+                    <label for="non_urgent">Non Urgent Check-up</label>
+
+                    <input type="radio" id="urgent" name="appointment_type" value="urgent">
+                    <label for="urgent">Urgent Check-up</label>
+
+                    <input type="radio" id="surgical" name="appointment_type" value="surgical">
+                    <label for="surgical">Surgical Appointment</label>
+                </div>
+
+                <label>Upload Previous Health Record</label>
+
+                <input type="file" id="file">
+
+                <label>Appointment Details</label>
+
+                <textarea id="appointment_details" name="appointment details"></textarea>
+
+                <button class="book_appointment">Book Appointment</button>
+
+            </div>
+        </section>
+
+        <span class="footer_end">All Rights Reserved © Tvastra 2020</span>
+    
+    </div>
+    <div class="sidebar_shade">
+        <div class="sidebar">
+            <i class="fas fa-arrow-right" id="sidebar_close"></i>
+            <a href="/doctor">
+                <div class="sidebar_entry">
+                    <span class="sidebar_span">Doctors</span>
+                </div>
+            </a>
+            <a href="/hospital">
+                <div class="sidebar_entry">
+                    <span>Hospitals</span>
+                </div>
+            </a>
+            
+                <div class="sidebar_entry_copy" onclick="treatments_dropdown_toggle()">
+                    <span>Treatments   <i class="fas fa-chevron-down"></i></span>
+                </div>
+            
+            <div class="treatments_dropdown" style="display: none;">
+                <a href="/dentistry"><span>Dentistry</span></a>
+                <a href="/dentistry"><span>Cancer</span></a>
+                <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                <a href="/dentistry"><span>Orthopedics Surgery</span></a>
+                <a href="/dentistry"><span>Infertitlity Treatment</span></a>
+            </div>
+            <a href="/aboutus">
+                <div class="sidebar_entry">
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="/plus">
+                <div class="sidebar_entry">
+                    <span>Tvastra Plus</span>
+                </div>
+            </a>
+            <a href="/submit_query">
+                <div class="sidebar_entry">
+                    <span>Get a quote</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/scripts/sidebar_navigation.js" type="text/javascript"></script>
+</body>
+
+</html>

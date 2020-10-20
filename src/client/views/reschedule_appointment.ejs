@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reschedule Appointment</title>
+    <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+    <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+    <link href="/scss/reschedule_appointment.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+    <div class="nav_block">
+        <nav class="phone_and_tab_nav">
+            <a href="/"><img id="brand_logo" src="/images/logo.png" alt="Brand Logo"></a>
+            
+            <div class="right_aligned">
+                <div class="profile_dropdown">
+                    <% if(user.profile_picture) {%>
+                        <img src="<%= user.profile_picture %>">
+                    <% } %>
+                    <% if(!user.profile_picture) {%>
+                        <img src="https://tvastra-profile-pictures.s3.ap-south-1.amazonaws.com/iconfinder_user_1608727.png">
+                    <% } %>
+                    <i class="fas fa-chevron-down" id="profile_picture_dropwdown_icon"></i>
+                    <div class="profile_dropdown_options">
+                        <% if(user.is_doctor==false) {%>
+                            <a href="/user_profile_edit">
+                                <div class="profile_block">
+                                    <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                    <span class="navbar_username"><%= user.name %></span>
+                                    <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(user.is_doctor==true) {%>
+                            <a href="/doctor_profile_edit">
+                                <div class="profile_block">
+                                    <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                    <span class="navbar_username"><%= user.name %></span>
+                                    <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                </div>
+                            </a>
+                        <% } %>
+                        
+                        <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                        <hr>
+                        <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                        <hr>
+                        <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                        <hr>
+                        <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                        <hr>
+                        <a href="/logout"><span class="option_hover">Logout</span></a>
+                        <hr>
+                    </div>
+                </div>
+                <i id="sidebar_toggle" class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <nav class="laptop_nav">
+    
+            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+    
+            <div class="nav_links">
+                <a href="/doctor"><p>Doctors</p></a>
+                <a href="/hospital"><p>Hospitals</p></a>
+                <div class="treatment_container">
+                    <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                    <div class="treatment_dropdown">
+                        <a href="/dentistry"><span>Dentistry</span></a>
+                        <a href="/dentistry"><span>Cancer</span></a>
+                        <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                        <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                        <a href="/dentistry"><span>Infertility Treatment</span></a>
+                    </div>
+                </div>
+                <a href="/aboutus"><p>About</p></a>
+                
+            </div>
+            <% if(loggedinstatus == false) {%>
+            <div class="nav_buttons">
+                <a href="/email_login"><button type="button" id="login_button" class="login_button">Login/Sign Up</button></a>
+    
+                <button type="button" class="get_quote_button">Get a Quote</button>
+            </div>
+            <% } %>
+            <% if(loggedinstatus == true) {%>
+                <div class="nav_buttons">
+                    <a href="#"><button type="button" id="tvastra_plus" class="tvastra_plus">Tvastra Plus</button></a>
+                    <button type="button" class="get_quote_button">Get a Quote</button>
+                    <div class="container_element">
+                        <span class="loggedinuser"><%=  user.name %><i class="fas fa-chevron-down"></i></span>
+                        <div class="user_dropdown">
+                            <div class="dropdown_options">
+                                <% if(user.is_doctor==false) {%>
+                                    <a href="/user_profile_edit">
+                                        <div class="profile_block">
+                                            <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                            <span class="navbar_username"><%= user.name %></span>
+                                            <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                        </div>
+                                    </a>
+                                <% } %>
+                                <% if(user.is_doctor==true) {%>
+                                    <a href="/doctor_profile_edit">
+                                        <div class="profile_block">
+                                            <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                            <span class="navbar_username"><%= user.name %></span>
+                                            <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                        </div>
+                                    </a>
+                                <% } %>
+                                
+                                <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                                <hr>
+                                <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                                <hr>
+                                <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                                <hr>
+                                <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                                <hr>
+                                <a href="/logout"><span class="option_hover">Logout</span></a>
+                                <hr>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </nav>
+
+    </div>
+    <div class="siteflow">
+        
+        
+        <% if(message == "Booking Failed") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Failure</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+        <%}%>
+
+        <% if(message=="Booking Confirmed") {%>
+            <div class="message success" id="message">
+                <i class="fas fa-check-circle big_icon"></i>
+                <h2>Success</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+        <%}%>
+
+
+        <div class="appointment_info">
+
+            <div class="doctor_id" id="doctor_id" style="display: none;"><%= obj.doctor_details._id %></div>
+            <div class="appointment_id" id="appointment_id" style="display: none;"><%= obj.appointment_id %></div>
+            
+            <h3><%= obj.doctor_name %></h3>
+            <div class="information_grid">
+                <i class="fas fa-clock"></i>
+                <span class="booking_date">Date: <%= obj.booking_date.toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }) %></span>
+                <i class="fas fa-hospital"></i>
+                <span class="hospital_name">Hospital: <%= obj.hospital_name %></span>
+                <i class="fas fa-play-circle"></i>
+                <span class="from">From: <%= obj.start_time.toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'}) %></span>
+                <i class="fas fa-ban"></i>
+                <span class="to">To: <%= obj.end_time.toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'}) %></span>
+            </div>
+
+            <button class="reschedule_appointment" onclick="toggle_day_selector()">Reschedule Appointment</button>
+
+            <div class="day_selector" id="day_selector">
+                <div class="scroll_back" >
+                    <i class="fas fa-chevron-left" id="scroll_back"></i>
+                </div>
+                <% var days_array = ['Sun','Mon','Tue','Wed','Thu','Friday','Sat'] %>
+                <% var date_today = new Date() %>
+                
+                <div class="days_availability" id="days_availability">
+                    <div class="day_entry active_day" id="day_0">
+                        <span class="day_heading">Today</span>
+                        <span class="slots_available" id="slots_available_0"><%= obj.slot_numbers[0] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry active_day" id="day_1">
+                        <span class="day_heading">Tommorow</span>
+                        <span class="slots_available" id="slots_available_1"><%= obj.slot_numbers[1] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry active_day" id="day_2">
+                        <span class="day_heading"><% date_today.setDate(date_today.getDate() + 2) %><%= days_array[date_today.getDay()] %>, <%= date_today.toLocaleDateString() %></span>
+                        <span class="slots_available" id="slots_available_2"><%= obj.slot_numbers[2] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry" id="day_3">
+                        <span class="day_heading"><% date_today.setDate(date_today.getDate() + 1) %><%= days_array[date_today.getDay()] %>, <%= date_today.toLocaleDateString() %></span>
+                        <span class="slots_available" id="slots_available_3"><%= obj.slot_numbers[3] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry" id="day_4">
+                        <span class="day_heading"><% date_today.setDate(date_today.getDate() + 1) %><%= days_array[date_today.getDay()] %>, <%= date_today.toLocaleDateString() %></span>
+                        <span class="slots_available" id="slots_available_4"><%= obj.slot_numbers[4] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry" id="day_5">
+                        <span class="day_heading"><% date_today.setDate(date_today.getDate() + 1) %><%= days_array[date_today.getDay()] %>, <%= date_today.toLocaleDateString() %></span>
+                        <span class="slots_available" id="slots_available_5"><%= obj.slot_numbers[5] %> slots available</span>   
+                    </div>
+
+                    <div class="day_entry" id="day_6">
+                        <span class="day_heading"><% date_today.setDate(date_today.getDate() + 1) %><%= days_array[date_today.getDay()] %>, <%= date_today.toLocaleDateString() %></span>
+                        <span class="slots_available" id="slots_available_6"><%= obj.slot_numbers[6] %> slots available</span>   
+                    </div>
+                </div>
+                <div class="scroll_forward" ">
+                    <i class="fas fa-chevron-right" id="scroll_forward"></i>
+                </div>
+            </div>
+
+            <% for(var i = 0 ; i < 7 ; i++) {%>
+                <div class="slot_selector" id="slot_selector_<%= i %>">
+                    <span class="slot_phase_heading"><i class="fas fa-sun"></i> Morning</span>
+                    <div class="morning_slots" id="morning_slots_<%= i %>">
+    
+                    </div>
+                    <hr>
+                    <span class="slot_phase_heading"><i class="fas fa-sun"></i> Noon</span>
+                    <div class="noon_slots" id="noon_slots_<%= i %>">
+    
+                    </div>
+                    <hr>
+                    <span class="slot_phase_heading"><i class="fas fa-moon"></i> Evening</span>
+                    <div class="evening_slots" id="evening_slots_<%= i %>">
+    
+                    </div>
+                    <hr>
+                    <div class="hospital_zero">
+                        <% if(obj.doctor_details.hospitals.length >= 1) {%> <span><%= obj.doctor_details.hospitals[0].value %></span> <hr> <% } %>
+                    </div>
+                    <div class="hospital_one">
+                        <% if(obj.doctor_details.hospitals.length >= 2) {%> <span><%= obj.doctor_details.hospitals[1].value %></span> <hr> <% } %>
+                    </div>
+                    <div class="hospital_two">
+                        <% if(obj.doctor_details.hospitals.length >= 3) {%> <span><%= obj.doctor_details.hospitals[2].value %></span> <hr> <% } %>
+                    </div>
+                    <div class="hospital_three">
+                        <% if(obj.doctor_details.hospitals.length >= 4) {%> <span><%= obj.doctor_details.hospitals[3].value %></span> <hr> <% } %>
+                    </div>
+                    <div class="hospital_four">
+                        <% if(obj.doctor_details.hospitals.length >= 5) {%> <span><%= obj.doctor_details.hospitals[4].value %></span> <hr> <% } %>
+                    </div>
+                </div>    
+            <% } %>
+        </div>
+        
+    </div>
+    <footer>
+    
+    
+    
+        <div class="footer_flex_mobile">
+
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            <a href="/doctor"><span>Doctor</span></a>
+
+            <a href="/hospital"><span>Hospital</span></a>
+
+            <a href="/dentistry"><span>Treatment</span></a>
+
+            <a href="/contactus"><span>Contact us</span></a>
+
+            <a href="/faq"><span>FAQs</span></a>
+
+            <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-instagram"></i></span>
+
+            <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+
+        </div>
+
+        <div id="footer_flex_tab_laptop" class="footer_flex_tab_laptop">
+            <div class="footer_flex_inner_one">
+                <div class="footer_flex_inner_one_left">
+                    <a href="/doctor"><span>Doctor</span></a>
+
+                    <a href="/hospital"><span>Hospital</span></a>
+
+                    <a href="/dentistry"><span>Treatment</span></a>
+
+                    <a href="/contactus"><span>Contact us</span></a>
+
+                    <a href="/faq"><span>FAQs</span></a>
+
+                </div>
+
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            </div>
+
+            <div class="footer_flex_inner_two">
+                <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+                <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-instagram"></i></span>
+            </div>
+        </div>
+
+        
+    
+    </footer>
+    <div class="sidebar_shade">
+        <div class="sidebar">
+            <i class="fas fa-arrow-right" id="sidebar_close"></i>
+            <a href="/doctor">
+                <div class="sidebar_entry">
+                    <span class="sidebar_span">Doctors</span>
+                </div>
+            </a>
+            <a href="/hospital">
+                <div class="sidebar_entry">
+                    <span>Hospitals</span>
+                </div>
+            </a>
+            
+                <div class="sidebar_entry_copy" onclick="treatments_dropdown_toggle()">
+                    <span>Treatments   <i class="fas fa-chevron-down"></i></span>
+                </div>
+            
+            <div class="treatments_dropdown" style="display: none;">
+                <a href="/dentistry"><span>Dentistry</span></a>
+                <a href="/dentistry"><span>Cancer</span></a>
+                <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                <a href="/dentistry"><span>Orthopedics Surgery</span></a>
+                <a href="/dentistry"><span>Infertitlity Treatment</span></a>
+            </div>
+            <a href="/aboutus">
+                <div class="sidebar_entry">
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="/plus">
+                <div class="sidebar_entry">
+                    <span>Tvastra Plus</span>
+                </div>
+            </a>
+            <a href="/submit_query">
+                <div class="sidebar_entry">
+                    <span>Get a quote</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/scripts/sidebar_navigation.js" type="text/javascript"></script>
+    <script src="/scripts/message_animate.js" type="text/javascript"></script>
+    <script src="/scripts/reschedule_appointment.js" type="text/javascript"></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Status</title>
+    <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+    <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+    <link href="/scss/booking_status.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+    <div class="nav_block">
+        <nav class="phone_and_tab_nav">
+            <a href="/"><img id="brand_logo" src="/images/logo.png" alt="Brand Logo"></a>
+            
+            <div class="right_aligned">
+                <div class="profile_dropdown">
+                    <% if(user.profile_picture) {%>
+                        <img src="<%= user.profile_picture %>">
+                    <% } %>
+                    <% if(!user.profile_picture) {%>
+                        <img src="https://tvastra-profile-pictures.s3.ap-south-1.amazonaws.com/iconfinder_user_1608727.png">
+                    <% } %>
+                    <i class="fas fa-chevron-down" id="profile_picture_dropwdown_icon"></i>
+                    <div class="profile_dropdown_options">
+                        <% if(user.is_doctor==false) {%>
+                            <a href="/user_profile_edit">
+                                <div class="profile_block">
+                                    <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                    <span class="navbar_username"><%= user.name %></span>
+                                    <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                </div>
+                            </a>
+                        <% } %>
+                        <% if(user.is_doctor==true) {%>
+                            <a href="/doctor_profile_edit">
+                                <div class="profile_block">
+                                    <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                    <span class="navbar_username"><%= user.name %></span>
+                                    <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                </div>
+                            </a>
+                        <% } %>
+                        
+                        <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                        <hr>
+                        <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                        <hr>
+                        <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                        <hr>
+                        <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                        <hr>
+                        <a href="/logout"><span class="option_hover">Logout</span></a>
+                        <hr>
+                    </div>
+                </div>
+                <i id="sidebar_toggle" class="fas fa-bars"></i>
+            </div>
+        </nav>
+    
+        <nav class="laptop_nav">
+    
+            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+    
+            <div class="nav_links">
+                <a href="/doctor"><p>Doctors</p></a>
+                <a href="/hospital"><p>Hospitals</p></a>
+                <div class="treatment_container">
+                    <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                    <div class="treatment_dropdown">
+                        <a href="/dentistry"><span>Dentistry</span></a>
+                        <a href="/dentistry"><span>Cancer</span></a>
+                        <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                        <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                        <a href="/dentistry"><span>Infertility Treatment</span></a>
+                    </div>
+                </div>
+                <a href="/aboutus"><p>About</p></a>
+                
+            </div>
+            <% if(loggedinstatus == false) {%>
+            <div class="nav_buttons">
+                <a href="/email_login"><button type="button" id="login_button" class="login_button">Login/Sign Up</button></a>
+    
+                <button type="button" class="get_quote_button">Get a Quote</button>
+            </div>
+            <% } %>
+            <% if(loggedinstatus == true) {%>
+                <div class="nav_buttons">
+                    <a href="#"><button type="button" id="tvastra_plus" class="tvastra_plus">Tvastra Plus</button></a>
+                    <button type="button" class="get_quote_button">Get a Quote</button>
+                    <div class="container_element">
+                        <span class="loggedinuser"><%=  user.name %><i class="fas fa-chevron-down"></i></span>
+                        <div class="user_dropdown">
+                            <div class="dropdown_options">
+                                <% if(user.is_doctor==false) {%>
+                                    <a href="/user_profile_edit">
+                                        <div class="profile_block">
+                                            <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                            <span class="navbar_username"><%= user.name %></span>
+                                            <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                        </div>
+                                    </a>
+                                <% } %>
+                                <% if(user.is_doctor==true) {%>
+                                    <a href="/doctor_profile_edit">
+                                        <div class="profile_block">
+                                            <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                            <span class="navbar_username"><%= user.name %></span>
+                                            <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                        </div>
+                                    </a>
+                                <% } %>
+                                
+                                <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                                <hr>
+                                <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                                <hr>
+                                <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                                <hr>
+                                <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                                <hr>
+                                <a href="/logout"><span class="option_hover">Logout</span></a>
+                                <hr>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </nav>
+
+    </div>
+    <div class="siteflow">
+        
+        
+        <% if(message == "Booking Failed") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Failure</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+        <%}%>
+
+        <% if(message=="Booking Confirmed") {%>
+            <div class="message success" id="message">
+                <i class="fas fa-check-circle big_icon"></i>
+                <h2>Success</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+        <%}%>
+
+
+        <div class="appointment_info">
+            <h2>In Clinic Appointment</h2>
+            <hr>
+            <div class="timing_info">
+                <i class="fas fa-calendar-plus"></i>
+                <span class="date_value"><%= obj.booking_date.toLocaleDateString(undefined,{ weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }) %></span>
+                <i class="fas fa-clock"></i>
+                <span class="from_time">From: <%= obj.start_time.toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'}) %></span>
+                <i class="fas fa-clock"></i>
+                <span class="to_time">To: <%= obj.end_time.toLocaleTimeString([],{hour: '2-digit', minute:'2-digit'}) %></span>
+            </div>
+
+            <div class="doctor_info">
+                <img class="doctor_image" src="<%= obj.doctor_details.profile_picture %>">
+                <div class="hospital_names">
+                    <span class="doctor_name"><%= obj.doctor_details.name %></span>
+                    <% for(var i = 0 ; i < obj.doctor_details.hospitals.length ; i++) {%><span class="hospital_name"><%= obj.doctor_details.hospitals[i].value %></span><% } %>
+                </div>
+
+                <img src="https://cdn0.iconfinder.com/data/icons/health-icons-rounded/110/Hospital-512.png">
+                <span class="hospital_name"><%= obj.hospital_name %></span>
+
+            </div>
+
+        </div>
+        <div class="col2">
+            <% if(appointment_status == true) {%>
+                <div class="status">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Appointment Confirmed</h2>
+                </div>
+            <% } %>
+
+            <% if(appointment_status == false) {%>
+                <div class="status">
+                    <i class="fas fa-times-circle big_icon"></i>
+                    <h2>Error Occured</h2>
+                </div>
+            <% } %>
+
+            <h2>We have sent you an SMS with the details</h2>
+
+            <span class="label">Patient name:</span>
+            <span class="patient_details"><%= obj.patient_name %></span>
+
+            <span class="label">Mobile number:</span>
+            <span class="patient_details"><%= obj.patient_number %></span>
+
+            <div class="buttons_container">
+                <button class="buttons cancel_appointment" id="cancel_appointment" onclick="modal_open()">Cancel Appointment</button>
+                <button class="buttons reschedule_appointment" id="reschedule_appointment" onclick="trigger_reschedule_page()" >Reschedule Appointment</button>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+    
+    
+    
+        <div class="footer_flex_mobile">
+
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            <a href="/doctor"><span>Doctor</span></a>
+
+            <a href="/hospital"><span>Hospital</span></a>
+
+            <a href="/dentistry"><span>Treatment</span></a>
+
+            <a href="/contactus"><span>Contact us</span></a>
+
+            <a href="/faq"><span>FAQs</span></a>
+
+            <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-instagram"></i></span>
+
+            <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+
+        </div>
+
+        <div id="footer_flex_tab_laptop" class="footer_flex_tab_laptop">
+            <div class="footer_flex_inner_one">
+                <div class="footer_flex_inner_one_left">
+                    <a href="/doctor"><span>Doctor</span></a>
+
+                    <a href="/hospital"><span>Hospital</span></a>
+
+                    <a href="/dentistry"><span>Treatment</span></a>
+
+                    <a href="/contactus"><span>Contact us</span></a>
+
+                    <a href="/faq"><span>FAQs</span></a>
+
+                </div>
+
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            </div>
+
+            <div class="footer_flex_inner_two">
+                <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+                <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-instagram"></i></span>
+            </div>
+        </div>
+
+        
+    
+    </footer>
+    <div class="modal">
+        <div class="modal_prompt">
+            <h3>Cancel Appointment ?</h3>
+            <hr>
+            <span class="question">Are you sure you want to cancel your appointment?</span>
+            <div class="modal_buttons">
+                <button class="yes" onclick="confirm_and_cancel()" >Yes</button>
+                <button class="no" onclick="modal_close()" >No</button>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar_shade">
+        <div class="sidebar">
+            <i class="fas fa-arrow-right" id="sidebar_close"></i>
+            <a href="/doctor">
+                <div class="sidebar_entry">
+                    <span class="sidebar_span">Doctors</span>
+                </div>
+            </a>
+            <a href="/hospital">
+                <div class="sidebar_entry">
+                    <span>Hospitals</span>
+                </div>
+            </a>
+            
+                <div class="sidebar_entry_copy" onclick="treatments_dropdown_toggle()">
+                    <span>Treatments   <i class="fas fa-chevron-down"></i></span>
+                </div>
+            
+            <div class="treatments_dropdown" style="display: none;">
+                <a href="/dentistry"><span>Dentistry</span></a>
+                <a href="/dentistry"><span>Cancer</span></a>
+                <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                <a href="/dentistry"><span>Orthopedics Surgery</span></a>
+                <a href="/dentistry"><span>Infertitlity Treatment</span></a>
+            </div>
+            <a href="/aboutus">
+                <div class="sidebar_entry">
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="/plus">
+                <div class="sidebar_entry">
+                    <span>Tvastra Plus</span>
+                </div>
+            </a>
+            <a href="/submit_query">
+                <div class="sidebar_entry">
+                    <span>Get a quote</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/scripts/sidebar_navigation.js" type="text/javascript"></script>
+    <script src="/scripts/message_animate.js" type="text/javascript"></script>
+    <script src="/scripts/booking_status.js" type="text/javascript"></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+@import "./theme.scss";
+
+h1{
+    font-size: 25px;
+    font-family: TheBoldFont;
+}
+h2{
+    font-size: 20px;
+    font-family: TheBoldFont;
+    color: black;
+}
+h3{
+    font-size: 16px;
+    font-family: TheBoldFont;
+    color: black;
+}
+p{
+    font-size: 13px;
+    font-family: TheLightFont;
+    color: black;
+    @media screen and (min-width:768px){
+        font-size: 16px;
+    }
+    @media screen and (min-width:1024px){
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+span{
+    font-size: 12px;
+    font-family: TheLightFont;
+    color: black;
+    @media screen and (min-width:1024px){
+        font-size: 13px;
+        line-height: 25px;
+    }
+}
+.dashline{
+    border: none;
+    width: 1.5rem;
+    height: 3px;
+    background-color: dodgerblue;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+li{
+    font-size: 14px;
+    font-family: TheLightFont;
+    color: black;
+    @media screen and (min-width:768px){
+        font-size: 16px;
+    }
+    @media screen and (min-width:1024px){
+        font-size: 17px;
+    }
+}
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+}
+
+.siteflow{
+    width: 100%;
+    margin-top: 58px;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+    .heading_container{
+        width: 100%;    
+        height: 15.5rem;
+        background:
+        linear-gradient(90deg, rgba(0, 153, 255, 0.89) 0%, rgba(0, 153, 255, 0) 100%),
+        url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg");
+        background-size: cover;
+        // background-position-x: 55.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2{
+            @include whitetext();
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+        span{
+            margin-top: 1rem;
+            @include whitetext();
+            font-family: TheLightFont;
+            font-weight: lighter;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+    .vaccination{
+        padding: 2rem 1rem;
+        width: 100%;
+        h1{
+            text-align: center;
+        }
+        img{
+            margin-top: 1.5rem;
+            object-fit: cover;
+            height: 17.75rem;
+            width: 100%;
+        }
+        .heading_about_dentist{
+            text-align: left;
+            margin-top: 1rem;
+        }
+        p{
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+        ul li::before {
+            content: "\2022";
+            color: rgb(119, 119, 255);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+          }
+        li{
+            margin: 1rem 1rem;
+        }
+    }
+    .treatments{
+        width: 100%;
+        .treatment{
+            padding: 1rem;
+        }
+        .rounded_div{
+            margin: 0rem auto;
+            width: 4rem;
+            height: 4rem;
+            border: solid 1px transparent;
+            background-color: rgb(204,227,240);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+                font-weight: bold;
+                font-size: 30px;
+            }
+        }
+        h3{
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+        span{
+            display: block;
+            text-align: center;
+            margin-top: 0.7rem;
+        }
+    }
+    .pricing{
+        padding: 2rem 1rem;
+        
+        .service_details{
+            padding-top:1rem;
+            border: solid 1px gainsboro;
+            border-radius: 15px;
+            .dashline{
+                border: none;
+                width: 1.5rem;
+                height: 3px;
+                background-color: dodgerblue;
+                display: inline-block;
+                position: relative;
+                top: 3px;
+            }
+            h3{
+                display: inline-block;
+            }
+            .service_details_box{
+                padding: 1.5rem 1.5rem 0rem 1.5rem;
+                em{
+                    display:inline-block;
+                    font-family: TheBoldFont;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+                .value{
+                    color: grey;
+                }
+                .key{
+                    color: rgb(37, 37, 37);
+                }
+                .price_variable{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                hr{
+                    margin-bottom: 1rem;
+                }
+                
+            }
+        }
+        .schedule{
+            @extend .service_details;
+            margin-top: 1rem;
+        }
+    }
+    .more_services{
+        padding: 2rem;
+        background-color: rgb(156,191,218);
+        h1{
+            text-align: center;
+            color: white;
+        }
+        .navigation_buttons{
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            .navigate_button{
+                width:2rem;
+                height: 2rem;
+                background-color: white;
+                border: solid 1px transparent;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+                i{
+                    font-size: 11px;
+                }
+            }
+        }
+        .treatment{
+            box-shadow: 1rem 1rem 1rem rgba(0,0,0,.175);
+            background-color: white;
+            margin-top: 1rem;
+            display: block;
+            border-radius: 15px;
+            width: 100%;
+            height: 275px;
+            img{
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                display: block;
+                object-fit: cover;
+                width: 100%;
+                height: 195px;
+            }
+            .dashline{
+                display: inline-block;
+                margin-top: 2rem;
+                height: 2px;
+            }
+            h3{
+                display: inline-block;
+                margin-top: 2rem;
+            }
+        }
+    }
+    footer{
+        border-bottom: solid 8px dodgerblue;
+    }
+}
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+
+@media screen and (min-width:768px){
+    .siteflow{
+        .heading_container{
+            h2{
+                font-size: 30px;
+            }
+            span{
+                font-size: 15px;
+            }
+        }
+        .vaccination{
+            padding: 2rem 2rem;
+            h1{
+                text-align: left;
+            }
+            .vaccination_grid{
+                margin-top: 1.5rem;
+                display: grid;
+                column-gap: 1rem;
+                grid-template-columns: 260px auto;
+                .vaccination_image{
+                    img{
+                        margin:0rem;
+                        height: 100%;
+                    }
+                }
+                .vaccination_text{
+                    .heading_about_dentist{
+                        margin-top: 0rem;
+                    }
+                }
+            }
+        }
+        .treatments{
+            display: flex;
+            span{
+                font-size: 13px;
+                line-height: 18px;
+                letter-spacing: 1px;
+            }
+        }
+        .pricing{
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 0.5rem;
+            .schedule{
+                margin:0rem;
+                height: 150px;
+            }
+        }
+        .more_services{
+            .treatment{
+                h3{
+                    font-size: 20px;
+                }
+            }
+            .more_services_head{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .navigation_buttons{
+                    margin: 0rem;
+                }
+                
+            }
+            .more_services_body{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                column-gap: 0.5rem;
+            }
+        }
+    }
+}
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        .heading_container{
+            padding: 6rem;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            h2{
+                text-align: left;
+                font-size: 32px;
+            }
+            span{
+                font-size: 20px;
+            }
+        }
+        .desktop_view_content_grid{
+            padding: 0rem 6rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: auto 32%;
+            grid-template-areas: 
+            "vaccination pricing"
+            "treatments .";
+            .vaccination{
+                grid-area: vaccination;
+                .vaccination_grid{
+                    grid-template-columns:400px auto;
+                }
+            }
+            .treatments{
+                grid-area: treatments;
+                span{
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+            .pricing{
+                grid-area: pricing;
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto;
+                column-gap: 0rem;
+                row-gap:0.5rem;
+                .service_details{
+                    .service_details_box{
+                        em{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        .more_services{
+            padding: 2rem 6rem;
+            .more_services_body{
+                margin-top: 0.5rem;
+            }
+        }
+    }
+    footer{
+        span{
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tvastra Plus</title>
+    <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+    <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+    <link href="/scss/plus.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+    <nav class="phone_and_tab_nav">
+        <a href="/"><img id="brand_logo" src="/images/logo.png" alt="Brand Logo"></a>
+        
+        <div class="right_aligned">
+            <div class="profile_dropdown">
+                <% if(user.profile_picture) {%>
+                    <img src="<%= user.profile_picture %>">
+                <% } %>
+                <% if(!user.profile_picture) {%>
+                    <img src="https://tvastra-profile-pictures.s3.ap-south-1.amazonaws.com/iconfinder_user_1608727.png">
+                <% } %>
+                <i class="fas fa-chevron-down" id="profile_picture_dropwdown_icon"></i>
+                <div class="profile_dropdown_options">
+                    <% if(user.is_doctor==false) {%>
+                        <a href="/user_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    <% if(user.is_doctor==true) {%>
+                        <a href="/doctor_profile_edit">
+                            <div class="profile_block">
+                                <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                <span class="navbar_username"><%= user.name %></span>
+                                <span class="navbar_user_mobile_number"><%= user.number %></span>
+                            </div>
+                        </a>
+                    <% } %>
+                    
+                    <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                    <hr>
+                    <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                    <hr>
+                    <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                    <hr>
+                    <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                    <hr>
+                    <a href="/logout"><span class="option_hover">Logout</span></a>
+                    <hr>
+                </div>
+            </div>
+            <i id="sidebar_toggle" class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <nav class="laptop_nav">
+    
+        <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+
+        <div class="nav_links">
+            <a href="/doctor"><p>Doctors</p></a>
+            <a href="/hospital"><p>Hospitals</p></a>
+            <div class="treatment_container">
+                <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                <div class="treatment_dropdown">
+                    <a href="/dentistry"><span>Dentistry</span></a>
+                    <a href="/dentistry"><span>Cancer</span></a>
+                    <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                    <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                    <a href="/dentistry"><span>Infertility Treatment</span></a>
+                </div>
+            </div>
+            <a href="/aboutus"><p>About</p></a>
+            
+        </div>
+        <% if(loggedinstatus == false) {%>
+        <div class="nav_buttons">
+            <a href="/email_login"><button type="button" id="login_button" class="login_button">Login/Sign Up</button></a>
+
+            <button type="button" class="get_quote_button">Get a Quote</button>
+        </div>
+        <% } %>
+        <% if(loggedinstatus == true) {%>
+            <div class="nav_buttons">
+                <a href="#"><button type="button" id="tvastra_plus" class="tvastra_plus">Tvastra Plus</button></a>
+                <button type="button" class="get_quote_button">Get a Quote</button>
+                <div class="container_element">
+                    <span class="loggedinuser"><%=  user.name %><i class="fas fa-chevron-down"></i></span>
+                    <div class="user_dropdown">
+                        <div class="dropdown_options">
+                            <% if(user.is_doctor==false) {%>
+                                <a href="/user_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            <% if(user.is_doctor==true) {%>
+                                <a href="/doctor_profile_edit">
+                                    <div class="profile_block">
+                                        <img class="navbar_profile_picture" src="<%= user.profile_picture %>">
+                                        <span class="navbar_username"><%= user.name %></span>
+                                        <span class="navbar_user_mobile_number"><%= user.number %></span>
+                                    </div>
+                                </a>
+                            <% } %>
+                            
+                            <a href="/all_appointments"><span class="option_hover">My Appointments</span></a>
+                            <hr>
+                            <a class="my_lab_tests" id="my_lab_tests_link" href="#"><span class="option_hover">My Lab Tests</span></a>
+                            <hr>
+                            <a class="my_medicine_orders" id="my_medicine_orders_link" href="#"><span class="option_hover">My Medicine Orders</span></a>
+                            <hr>
+                            <a class="my_payments" id="my_payments_link" href="#"><span class="option_hover">My Payments</span></a>
+                            <hr>
+                            <a href="/logout"><span class="option_hover">Logout</span></a>
+                            <hr>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </nav>
+
+    <section class="heading_container">
+        <span class="plus_box">PLUS</span>
+
+        <h1>Healthcare plans for you and your family.</h1>
+
+        <span>Become a Tvastra Plus member and save 60% off on your health expenses</span>
+    </section>
+
+    <div class="siteflow">
+        <section class="overlapping_box">
+            <h1>Select a Tvastra Plus healthcare plan</h1>
+            <span>All plus plans are for 4 adults and 2 children</span>
+            <hr class="plans_top">
+            <div class="plans">
+                <div class="plan basic">
+                    <h2>Basic Plan</h2>
+                    <hr>
+                    <span>Unlimited Consultancy with any speciality</span>
+                    <span>20% off on prescription medicines</span>
+                    <span>20% off on tests and checkups</span>
+                    <span class="price">₹2,999<em>/year</em></span>
+                    <span class="plan_details">View Plan Details</span>
+    
+                    <button class="buy_plan">Buy Plan</button>
+                </div>
+    
+                <div class="plan advanced">
+                    <span class="popular">Popular</span>
+    
+                    <h2>Advanced Plan</h2>
+    
+                    <hr>
+    
+                    <span>Unlimited Consultancy with any speciality</span>
+                    <span>20% off on prescription medicines</span>
+                    <span>20% off on tests and checkups</span>
+                    <span>10 free In-clininc consultations</span>
+                    <span class="price">₹3,999<em>/year</em></span>
+                    <span class="plan_details">View Plan Details</span>
+    
+                    <button class="buy_plan">Buy Plan</button>
+    
+                </div>
+    
+                <div class="plan comprehensive">
+    
+                    <h2>Comprehensive Plan</h2>
+    
+                    <hr>
+    
+                    <span>Unlimited Consultancy with any speciality</span>
+                    <span>20% off on prescription medicines</span>
+                    <span>20% off on tests and checkups</span>
+                    <span>10 free In-clininc consultations</span>
+                    <span>2 Master health checkups</span>
+                    <span class="price">₹5,999<em>/year</em></span>
+                    <span class="plan_details">View Plan Details</span>
+    
+                    <button class="buy_plan">Buy Plan</button>
+    
+                </div>
+            </div>
+        </section>
+        <section class="rating">
+            <h1>Trusted by 2 Crore+ users every month</h1>
+
+            <span>Tvastra is the leading healthcare technology company in India. We began in 2009 and we help 2 crore
+                customers every month.</span>
+
+            <div class="rating_flex">
+                <div class="rating_results">
+                    <span class="rating_value">4.5</span>
+                    <small class="star_rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></small>
+                    <small class="review_count">1000+ reviews</small>
+                </div>
+                
+                <div class="rating_bars">
+                    <div class="bar bar5">
+                        <div class="five_star">
+        
+                        </div>
+                    </div>
+        
+                    <div class="bar bar4">
+                        <div class="four_star">
+        
+                        </div>
+                    </div>
+        
+                    <div class="bar bar3">
+                        <div class="three_star">
+        
+                        </div>
+                    </div>
+        
+                    <div class="bar bar2">
+                        <div class="two_star">
+        
+                        </div>
+                    </div>
+        
+                    <div class="bar bar1">
+                        <div class="one_star">
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats_grid">
+                <div class="monthly_customers stat">
+                    <i class="fas fa-users"></i>
+                    <span>2 Crore+</span>
+                    <small>Monthly Customers</small>
+                </div>
+
+                <div class="verified_doctors stat">
+                    <i class="fas fa-user-md"></i>
+                    <span>100,000+</span>
+                    <small>Verified Doctors</small>
+                </div>
+
+                <div class="medicine_orders stat">
+                    <i class="fas fa-pills"></i>
+                    <span>10 Lakh+</span>
+                    <small>Medicine Orders Delivered</small>
+                </div>
+
+                <div class="doctor_appointments stat">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>5 Crore+</span>
+                    <small>Doctor Appointments</small>
+                </div>
+            </div>
+
+        </section>
+        
+        <section class="benefits_of_plus">
+            <h4>Benefits of Plus Membership</h4>
+            <hr>
+            
+            <div class="benefits">
+                <div class="benefit_one">
+                    <h2>Zero fees for in-clininc consultation</h2>
+                
+                    <div class="ticked_spans">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="ticked">Consult with 30000+ specialist doctors at top clinics & hospitals in the PLUS network at
+                            Rs.0
+                            consultation fees*</span>
+                        <i class="fas fa-check-circle"></i>
+                        <span class="ticked">Upto 10 in-clinic consultations can be used by any family member over 12months
+                            period.</span>
+                    </div>
+                </div>
+    
+                <div class="hospitals_onboarded">
+                    <h2>Top Hospital Onboarded</h2>
+                    <div class="hospital_logos">
+                        <div class="image_container left">
+                            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/sakra.svg">
+                        </div>
+                         <div class="image_container">
+                            <img 
+                            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/psri.svg">
+                         </div>
+                        <div class="image_container left middle">
+                            <img 
+                            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/artemis.svg">
+                        </div>
+                        <div class="image_container middle">
+                            <img
+                            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/people-tree.svg">
+                        </div>
+                        <div class="image_container left">
+                            <img 
+                            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/birla.svg">
+                        </div>
+                        <div class="image_container">
+                            <img 
+                            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/pratiksha.svg">
+                        </div>
+                    </div>
+                    <span class="more_hospitals">+ More Hospitals</span>
+                </div>
+            </div>
+        
+        </section>
+       
+        <section class="unlimited_online">
+            <div class="unlimited_online_text">
+                <h2>Unlimited online consultations with top doctors</h2>
+                <div class="ticked_spans">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="ticked">Get all your health queries answered from any specialist online, any time of the day</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span class="ticked">Connect under 2 minutes on text , call or video - available 24hrs, 7 days of the week</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span class="ticked">All online consultations are confidential. Only patient and doctor can access the chats.</span>
+                </div>
+            </div>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/order.jpg">
+        </section>
+        <section class="flat_20">
+            <div class="flat_20_text">
+                <h2>Flat 20% Off on prescription medicine, lab tests & checkups</h2>
+            
+                <div class="ticked_spans">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Save money on medicines and lab tests for your entire family</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Get flat 20% off on medicines that require prescriptions & flat 20% off on health checkups and lab
+                        tests</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span>No question asked. No minimum order values, no limits, available in 100+ cities across India</span>
+                </div>
+            </div>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/order.jpg">
+        </section>
+        <section class="two_free">
+            <div class="two_free_text">
+                <h2>2 Free health checkups</h2>
+            
+                <div class="ticked_spans">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Discuss your test results with doctors through online consultations.Receive E-Report within 48 hrs.</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Home sample pickup</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span>Tabs are NABL, CAP Accredited</span>
+                    <i class="fas fa-check-circle"></i>
+                    <span>checkups can be booked anytime, even weekends. Tax deductible under 80D.</span>
+                </div>
+            </div>
+
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/checkup.jpg">
+        </section>
+        <section class="sixty_tests">
+            <span class="sixty_tests_heading">60 Tests included</span>
+
+            <div class="tests_grid">
+
+                <div class="test">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Vitamin+test.svg">
+                        <span>Vitamin Profile</span>
+                        <small>2 Tests</small>
+                </div>
+
+                <div class="test">
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Iron+def.svg">
+                    <span>Iron Deficiency Profile</span>
+                    <small>3 Tests</small>
+                </div>
+
+                <div class="test">
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Thyroid.svg">
+                    <span>Thyroid Profile</span>
+                    <small>3 Tests</small>
+                </div>
+
+                <div class="test">
+                    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Liver.svg">
+                    <span>Liver Profile</span>
+                    <small>11 Tests</small>
+                </div>
+            </div>
+            <div class="navigation_dots">
+                <div class="dot selected">
+                </div>
+
+                <div class="dot">
+                </div>
+            </div>
+        </section>
+
+        <section class="why_love">
+            <div class="why_love_heading">
+                <h2>Why we love Tvastra</h2>
+                <span class="plus_box">PLUS</span>
+            </div>
+
+            <div class="reviews">
+                <div class="review">
+                    <p>"Wonderful experience with Tvastra Plus it helped in saving a lot of amount as it free consulations with the
+                        best doctors."</p>
+                    <div class="review_grid">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Lipid.svg">
+                        <span class="review_writer">Rishabh Tiwari</span>
+                        <span class="writer_plan advanced">Advanced Plan user</span>
+                    </div>
+                </div>
+            
+                <div class="review">
+                    <p>"Fantastic experience with health test using Tvastra Plus.Didn't pay anything for test. I came to know
+                        aboutmy deficiency in vitamin where family doctor helped me with medicine."</p>
+                    <div class="review_grid">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Lipid.svg">
+                        <span class="review_writer">Mini Aggarwal</span>
+                        <span class="writer_plan comprehensive">Comprehensive Plan user</span>
+                    </div>
+                </div>
+            
+                <div class="review">
+                    <p>"24x7 access to doctors in just 60 seconds with 2 kids, one of them is bound to fall sick. Comes in super
+                        handy."</p>
+                    <div class="review_grid">
+                        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/task30-tvastra-plus/Lipid.svg">
+                        <span class="review_writer">Prachi Gupta</span>
+                        <span class="writer_plan comprehensive">Comprehensive Plan user</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="option">
+
+                <h5>How does free in-clininc consultation with doctors and hospitals work?</h5>
+
+                <div class="collapse_expand">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+
+            </div>
+
+            <div class="option_info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, illo ratione asperiores
+                    voluptates
+                    a
+                    vel eos laboriosam, distinctio sed dolorem, saepe repellendus incidunt. Veritatis modi harum
+                    unde
+                    officis, placeat blanditiis.</p>
+            </div>
+
+            <div class="option">
+
+                <h5>Are there any type of doctors not included in Tvastra Plus in-clinic consultation network?</h5>
+
+                <div class="collapse_expand">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+            <div class="option">
+
+                <h5>How do the unlimited online consultation work?</h5>
+
+                <div class="collapse_expand">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+            <div class="option">
+
+                <h5>How does flat 20% off on medicines work?</h5>
+
+                <div class="collapse_expand">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+            <div class="option">
+
+                <h5>How does 20% off on lab tests work?</h5>
+
+                <div class="collapse_expand">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+            </div>
+        </section>
+        
+    </div>
+    <footer>
+    
+    
+    
+        <div class="footer_flex_mobile">
+
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            <a href="/doctor"><span>Doctor</span></a>
+
+            <a href="/hospital"><span>Hospital</span></a>
+
+            <a href="/dentistry"><span>Treatment</span></a>
+
+            <a href="/contactus"><span>Contact us</span></a>
+
+            <a href="/faq"><span>FAQs</span></a>
+
+            <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                    class="fab fa-instagram"></i></span>
+
+            <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+
+        </div>
+
+        <div id="footer_flex_tab_laptop" class="footer_flex_tab_laptop">
+            <div class="footer_flex_inner_one">
+                <div class="footer_flex_inner_one_left">
+                    <a href="/doctor"><span>Doctor</span></a>
+
+                    <a href="/hospital"><span>Hospital</span></a>
+
+                    <a href="/dentistry"><span>Treatment</span></a>
+
+                    <a href="/contactus"><span>Contact us</span></a>
+
+                    <a href="/faq"><span>FAQs</span></a>
+
+                </div>
+
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/footer.png">
+
+            </div>
+
+            <div class="footer_flex_inner_two">
+                <span class="footer_end">All Rights Reserved. © tvastra 2018</span>
+                <span><i class="fab fa-facebook-f"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-pinterest-p"></i>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <i class="fab fa-twitter"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-google-plus-g"></i> &nbsp;&nbsp;&nbsp;&nbsp; <i
+                        class="fab fa-instagram"></i></span>
+            </div>
+        </div>
+
+        
+    
+    </footer>
+    <div class="sidebar_shade">
+        <div class="sidebar">
+            <i class="fas fa-arrow-right" id="sidebar_close"></i>
+            <a href="/doctor">
+                <div class="sidebar_entry">
+                    <span class="sidebar_span">Doctors</span>
+                </div>
+            </a>
+            <a href="/hospital">
+                <div class="sidebar_entry">
+                    <span>Hospitals</span>
+                </div>
+            </a>
+            
+                <div class="sidebar_entry_copy" onclick="treatments_dropdown_toggle()">
+                    <span>Treatments   <i class="fas fa-chevron-down"></i></span>
+                </div>
+            
+            <div class="treatments_dropdown" style="display: none;">
+                <a href="/dentistry"><span>Dentistry</span></a>
+                <a href="/dentistry"><span>Cancer</span></a>
+                <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                <a href="/dentistry"><span>Orthopedics Surgery</span></a>
+                <a href="/dentistry"><span>Infertitlity Treatment</span></a>
+            </div>
+            <a href="/aboutus">
+                <div class="sidebar_entry">
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="/plus">
+                <div class="sidebar_entry">
+                    <span>Tvastra Plus</span>
+                </div>
+            </a>
+            <a href="/submit_query">
+                <div class="sidebar_entry">
+                    <span>Get a quote</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/scripts/sidebar_navigation.js" type="text/javascript"></script>
+</div>
+</body>
+
+</html>

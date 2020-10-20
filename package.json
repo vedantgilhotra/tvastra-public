@@ -1,0 +1,38 @@
+{
+  "name": "tvastra-public",
+  "version": "1.0.0",
+  "description": "Web-app made using MERN technologies so as to aid the users, doctors to gather, provide information to one another and to serve as a platform for doctors to provide their schedules and other information and for patients to be able to book appointments with them doctors for their aid. The web-app includes functionalities like that of login, login with otp, being able to add medical records,update details,reschedule and review their appointments and a lot more.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vedant",
+  "license": "MIT",
+  "dependencies": {
+    "@yaireo/tagify": "^3.17.10",
+    "aws-sdk": "^2.745.0",
+    "body-parser": "^1.19.0",
+    "clocklet": "^0.2.6",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "express-session": "^1.17.1",
+    "gulp": "^4.0.2",
+    "http": "0.0.1-security",
+    "logger": "0.0.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "multer-s3-acl": "^1.0.3",
+    "nexmo": "^2.9.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}

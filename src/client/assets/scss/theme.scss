@@ -1,0 +1,61 @@
+@import './tagtheme';
+
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: TheBoldFont;
+    src: url("../fonts/TheBoldFont.otf");
+}
+
+@font-face{
+    font-family: TheLightFont;
+    src: url("../fonts/TheLightFont.otf");
+}
+
+@font-face{
+    font-family: karla;
+    src: url("../fonts/OKCKUL+Karla-Regular.ttf");
+}
+
+@mixin  lightblueback {
+    background-color: rgb(148,190,221);
+}
+
+@mixin darkblueback{
+    background-color: rgb(21, 31, 59);
+}
+
+@mixin greyback{
+    background-color: whitesmoke;
+}
+
+@mixin whiteback{
+    background-color: white;
+}
+
+@mixin slateblueback{
+    background-color: rgb(34,39,63);
+}
+
+@mixin greytext {
+    color: gainsboro;
+}
+
+@mixin bluetext{
+    color: dodgerblue;
+}
+
+
+@mixin whitetext{
+    color: white;
+}
+
+@mixin tantext{
+    color: tan;
+}
+
+button{
+    cursor: pointer;
+}

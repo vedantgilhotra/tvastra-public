@@ -1,0 +1,135 @@
+@import "./theme.scss";
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(156,191,218);
+}
+.siteflow{
+    width: 100%;
+    padding:0rem 1rem;
+    
+    .appointment_box{
+        background-color: white;
+        border: solid 1px transparent;
+        width:100%;
+        margin-top: 5.5rem;
+        box-shadow: 1rem 1rem 1rem rgba(0,0,0,.175);
+        h2{
+            margin-top: 1rem;
+            color: rgb(96,123,178);
+            font-size:20px;
+        }
+        hr{
+            margin-top: 1rem;
+            margin-bottom: 0px;
+        }
+        .appointment_box_inner{ 
+            padding:0rem 1rem;
+            width: 100%;
+            label{
+                display: block;
+                font-family: TheBoldFont;
+                font-size: 14px;
+                margin-top: 1rem;
+            }
+            #date{
+                width: 100%;
+                border: solid 1px gainsboro;
+                margin-top: 0.5rem;
+                height: 2.5rem;
+                padding: 0rem 1rem;
+                font-family: TheLightFont;
+            }
+            #time_interval_label{
+                margin-top: 1rem;
+            }
+            .options_grid{
+                margin-top: 0.5rem;
+                display: grid;
+                grid-template-columns: 18px auto;
+                column-gap: 10px;
+                row-gap: 0.5rem;
+                align-items: center;
+                label{
+                    margin-top: 0rem;
+                    position: relative;
+                    top: 2px;
+                    font-family: TheLightFont;
+                    font-size: 12px;
+                }
+            }
+
+            #file{
+                margin-top: 0.5rem;
+            }
+
+            textarea{
+                margin-top: 0.5rem;
+                width: 100%;
+                height: 4rem;
+            }
+            .book_appointment{
+                margin-top: 0.5rem;
+                @include whitetext();
+                display: block;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                height: 3rem;
+                border: none;
+                background-color: rgb(42,45,62);
+                margin-bottom: 1rem;
+                span{
+                    letter-spacing: 3px;
+                }
+                i{
+                    float: right;
+                }
+            }
+        }
+    }
+    .footer_end{
+        display: block;
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-size: 12px;
+        font-weight: 900;
+        font-family: TheBoldFont;
+    }
+}
+
+
+
+
+@media screen and (min-width:768px){
+    .siteflow{
+        padding: 0rem 6rem;
+        .footer_end{
+            margin-top: 6rem;
+            font-size: 14px;
+            
+        }
+    }
+}
+
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        padding: 0rem 15rem;
+        .appointment_box{
+            margin-top: 10rem;
+        }
+    }
+}
+
+
+@media screen and (min-width:1300px){
+    .siteflow{
+        padding: 0rem 25rem;
+        .appointment_box{
+            margin-top: 10rem;
+        }
+    }
+}

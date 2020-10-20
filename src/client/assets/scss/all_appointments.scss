@@ -1,0 +1,294 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.siteflow{
+    width: 100%;
+    padding: 0rem 1rem;
+    .dashboard_and_page_body{
+        margin-top: 58px;
+        .dashboard{
+            display: none;
+        }
+        .page_body{
+            margin-top: 5rem;
+            background-color: white;
+            .upcoming{
+                color: black;
+                font-size: 22px;
+            }
+            .col1{
+                height: 430px;
+                overflow-y: scroll;
+                margin-top: 0.5rem;
+                max-height: 30rem;
+                .no_records{
+                    font-size: 20px;
+                    margin: 1rem 0rem;
+                }
+                .appointment{
+                    margin-top: 1rem;
+                    background-color: gainsboro;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-areas: 
+                    "date info"
+                    "buttons buttons";
+                    column-gap: 1rem;
+                    padding: 0.5rem;
+                    border-radius: 8px;
+                    align-items: center;
+                    .date_display{
+                        grid-area: date;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 120px;
+                        height: 100px;
+                        background-color: white;
+                        border-radius: 8px;
+                        span{
+                            font-family: TheBoldFont;
+                            font-size: 18px;
+                        }
+                    }
+                    .appointment_info{
+                        grid-area: info;
+                        display: flex;
+                        flex-direction: column;
+                        width: fit-content;
+                        span{
+                            font-size: 16px;
+                            font-family: TheBoldFont;
+                            margin-bottom: 0.5rem;
+                            letter-spacing: 1px;
+                        }
+                        .doctor_name{
+                            color: rgb(15, 111, 207);
+                        }
+                        .status{
+                            background-color: grey;
+                            color: white;
+                            border-radius: 8px;
+                            height: 2rem;
+                            padding: 0.5rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    .buttons_container{
+                        grid-area: buttons;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        button{
+                            border:none;
+                            border-radius: 8px;
+                            height: 2.5rem;
+                            background-color: dodgerblue;
+                            color: white;
+                            letter-spacing: 1px;
+                            font-size: 20px;
+                            font-family: TheBoldFont;                        
+                        }
+                        .cancel_button{
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+            }
+            .completed{
+                color: black;
+                font-size: 22px;
+                margin-top: 1rem;
+            }
+            .col2{
+                overflow-y: scroll;
+                margin-bottom: 2rem;
+                margin-top: 0.5rem;
+                max-height: 30rem;
+                .no_records{
+                    font-size: 20px;
+                    margin: 1rem 0rem;
+                }
+                .appointment{
+                    margin-top: 1rem;
+                    background-color: gainsboro;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-areas: 
+                    "date info";
+                    column-gap: 1rem;
+                    padding: 0.5rem;
+                    border-radius: 8px;
+                    align-items: center;
+                    .date_display{
+                        grid-area: date;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 120px;
+                        height: 100px;
+                        background-color: white;
+                        border-radius: 8px;
+                        span{
+                            font-family: TheBoldFont;
+                            font-size: 18px;
+                        }
+                    }
+                    .appointment_info{
+                        grid-area: info;
+                        display: flex;
+                        flex-direction: column;
+                        width: fit-content;
+                        span{
+                            font-size: 16px;
+                            font-family: TheBoldFont;
+                            margin-bottom: 0.5rem;
+                            letter-spacing: 1px;
+                        }
+                        .doctor_name{
+                            color: rgb(15, 111, 207);
+                        }
+                        .status{
+                            background-color: grey;
+                            color: white;
+                            border-radius: 8px;
+                            height: 2rem;
+                            padding: 0.5rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+}
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+@media screen and (min-width:768px){
+    .siteflow{
+        padding: 2rem;
+        .dashboard_and_page_body{
+            .page_body{
+                .col1{
+                    .appointment{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+                .completed{
+                    margin-top: 1.5rem;
+                }
+                .col2{
+                    .appointment{
+                        display: flex;
+                        justify-content: flex-start;
+                        .appointment_info{
+                            margin-left: 92px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        // overflow: hidden;
+        padding: 3rem 6rem;
+        background-color: white;
+        @media screen and (min-width:1366px){
+            min-width: 1348px
+        }
+        .dashboard_and_page_body{
+            display: grid;
+            grid-template-columns: 25% 75%;
+            
+            .dashboard{
+             display: block;
+             .dashboard_header{
+                 padding: 2rem;
+                 padding-left: 0px;
+                h2{
+                    text-align: left;
+                }
+             }
+             .dashboard_options{
+                 padding: 2rem;
+                 padding-left: 0px;
+                 padding-top: 0rem;
+                 display: grid;
+                 grid-template-columns: auto;
+                 i{
+                     width: 20px;
+                     height: 20px;
+                     color: dodgerblue;
+                 }
+                 .dashboard_option{
+                     align-self: center;
+                     display:flex;
+                     align-items: center;
+                     height: 2.5rem;
+                     font-family: TheLightFont;
+                     font-size: 18px;
+                     color: black;
+                     i{
+                        margin-left: 1rem;
+                     }
+                     span{
+                         margin:auto 1rem;
+                     }
+                 }
+                 .selected_option{
+                     color: dodgerblue;
+                     font-size: 20px;
+                     font-family: TheBoldFont;
+                 }
+                 .dashboard_option:hover {
+                     border-left: solid 4px dodgerblue;
+                     font-size: 20px;
+                     background-color: gainsboro;
+                 }
+             }
+
+            }
+            .page_body{
+                margin-top: 2rem;
+            }
+        }
+    }
+}

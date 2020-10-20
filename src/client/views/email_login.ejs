@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email Login</title>
+        <link href="/scss/reset.css" rel="stylesheet" type="text/css">
+        <link href="/scss/theme.css" rel="stylesheet" type="text/css">
+        <link href="/scss/email_login.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="container">
+        <nav class="phone_and_tab_nav">
+            <img src="/images/logo.png" alt="Brand Logo">
+            <i class="fas fa-bars"></i>
+        </nav>
+
+        <nav class="laptop_nav">
+    
+            <a href="/"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg"></a>
+    
+            <div class="nav_links">
+                <a href="/doctor"><p>Doctors</p></a>
+                <a href="/hospital"><p>Hospitals</p></a>
+                <div class="treatment_container">
+                    <p>Treatment <i class="fas fa-chevron-down"></i></p>
+                    <div class="treatment_dropdown">
+                        <a href="/dentistry"><span>Dentistry</span></a>
+                        <a href="/dentistry"><span>Cancer</span></a>
+                        <a href="/dentistry"><span>Multi Organ Transplant</span></a>
+                        <a href="/dentistry"><span>Orthopedics surgery</span></a>
+                        <a href="/dentistry"><span>Infertility Treatment</span></a>
+                    </div>
+                </div>
+                <a href="/aboutus"><p>About</p></a>
+                
+            </div>
+            <div class="nav_buttons">
+               
+    
+                <button type="button" class="get_quote_button">Get a Quote</button>
+            </div>
+            
+            
+        </nav>
+
+        <div class="siteflow">
+           <% if(message == "Incorrect email or password") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Failure</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%>
+
+           <% if(message == "Login First") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Error</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%>
+            
+           <% if(message == "Password updated successfully") {%>
+            <div class="message success" id="message">
+                <i class="fas fa-check-circle big_icon"></i>
+                <h2>Failure</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%>
+
+           <% if(message == "Email already in use") {%>
+            <div class="message incorrect" id="message">
+                <i class="fas fa-times-circle big_icon"></i>
+                <h2>Error</h2>
+                <span><%=message%></span>
+                <i class="fas fa-times small_icon"></i>
+            </div>
+           <%}%>
+           
+            <section class="login_box">
+                <h3>Email Login</h3>
+                <hr>
+                <div class="login_box_inner">
+                   <form method="POST">
+                    <input type="email" name="email" id="email" required autofocus placeholder="Enter Email">
+                    <input type="password" name="password" required id="password" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <div class="non_email_links">
+                        <a href="/otp_login_number"><span class="login_with_otp non_email_link">Login with OTP</span></a>
+                        <a href="/forgot_password_email"><span class="forgot_password non_email_link">Forgot Password</span></a>
+                    </div>
+                    <button type="submit" class="login"><span>LOGIN</span><i class="fas fa-arrow-right"></i></button>
+                   </form>
+                </div>
+            
+                <span class="not_registered">Not Registered? <a href="/signup"><b class="sign_up_link">Sign Up</b>  </a></span>
+            </section>
+            <span class="footer_end">All Rights Reserved © Tvastra 2020</span>
+        </div>
+        
+        <script src="/scripts/message_animate.js" type="text/javascript"></script>
+    </div>
+    </body>
+</html>

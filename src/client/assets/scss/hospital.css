@@ -1,0 +1,1370 @@
+nav {
+  max-width: 1440px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(110, 109, 109, 0.582);
+          box-shadow: inset 0 0 5px rgba(110, 109, 109, 0.582);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(119, 114, 114, 0.699);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777272;
+}
+
+.siteflow {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media screen and (min-width: 1366px) {
+  .siteflow {
+    min-width: 1349px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .siteflow {
+    min-width: 1440px;
+  }
+}
+
+.siteflow .message {
+  background-color: white;
+  position: absolute;
+  top: 6rem;
+  height: 4rem;
+  padding: 0.5rem 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px auto 20px;
+      grid-template-columns: 40px auto 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+      grid-template-areas: "big_icon heading small_icon" "big_icon message small_icon";
+}
+
+.siteflow .message .big_icon {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: big_icon;
+  font-size: 40px;
+}
+
+.siteflow .message .small_icon {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: small_icon;
+  font-size: 20px;
+}
+
+.siteflow .message h2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: heading;
+  text-align: left;
+  font-size: 16px;
+}
+
+.siteflow .message span {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: message;
+  font-family: TheLightFont;
+  font-size: 12px;
+}
+
+.siteflow .incorrect {
+  border-left: solid 4px red;
+}
+
+.siteflow .incorrect .big_icon {
+  color: red;
+}
+
+.siteflow .incorrect h2 {
+  color: red;
+}
+
+.siteflow .incorrect span {
+  color: red;
+}
+
+.siteflow .success {
+  border-left: solid 4px green;
+  top: 7rem;
+}
+
+.siteflow .success .big_icon {
+  color: green;
+}
+
+.siteflow .success h2 {
+  color: green;
+}
+
+.siteflow .success span {
+  color: green;
+}
+
+p {
+  font-family: TheLightFont;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 50;
+  color: #0c1552;
+}
+
+h2 {
+  font-family: TheBoldFont;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #0c1552;
+}
+
+h3 {
+  font-family: TheBoldFont;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  color: #0c1552;
+}
+
+p .doctordescription {
+  font-family: Jansta;
+  font-size: 14px;
+}
+
+body {
+  background-color: white;
+  position: relative;
+}
+
+@media screen and (min-width: 1440px) {
+  body .container {
+    max-width: 1440px;
+    margin: 0rem auto;
+    padding: 0px;
+  }
+}
+
+body .sidebar_shade {
+  display: none;
+  position: absolute;
+  right: -100%;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.712);
+}
+
+body .sidebar_shade .sidebar {
+  padding-top: 1rem;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-color: white;
+  height: 120%;
+  width: 40%;
+}
+
+body .sidebar_shade .sidebar #sidebar_close {
+  right: 1rem;
+  display: block;
+  text-align: right;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+}
+
+body .sidebar_shade .sidebar .sidebar_entry, body .sidebar_shade .sidebar .sidebar_entry_copy {
+  border-bottom: solid 1px gainsboro;
+  padding-left: 1rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .sidebar_shade .sidebar .sidebar_entry span, body .sidebar_shade .sidebar .sidebar_entry_copy span {
+  color: black;
+  font-family: TheLightFont;
+  font-size: 18px;
+}
+
+body .sidebar_shade .sidebar .treatments_dropdown {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .sidebar_shade .sidebar .treatments_dropdown span {
+  display: block;
+  font-family: TheLightFont;
+  font-size: 16px;
+  border-bottom: solid 1px gainsboro;
+  padding-left: 2rem;
+  color: black;
+}
+
+.phone_and_tab_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  height: 58px;
+  width: 100%;
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .phone_and_tab_nav #brand_logo {
+    margin-left: 1rem;
+  }
+}
+
+.phone_and_tab_nav .right_aligned {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 1rem;
+}
+
+.phone_and_tab_nav .right_aligned #sidebar_toggle {
+  font-size: 20px;
+  display: block;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown #profile_picture_dropwdown_icon {
+  position: absolute;
+  bottom: -8px;
+  right: 14px;
+  display: block;
+  font-size: 10px;
+  z-index: 12;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options {
+  display: none;
+  position: absolute;
+  top: 3.2rem;
+  right: -2.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  width: 10rem;
+  z-index: 15;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options span {
+  display: block;
+  width: 10rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: black;
+  font-family: TheLightFont;
+  height: auto;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options hr {
+  margin: 0.5rem 0rem 0rem 0rem;
+  background-color: gainsboro;
+  height: 1px;
+  width: 100%;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block {
+  border-bottom: solid 1px gainsboro;
+  padding: 0.5rem;
+  width: 10rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "picture name" "picture number";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_profile_picture {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: picture;
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 0px;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_username {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  color: #0f67be;
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  font-family: TheBoldFont;
+  width: auto;
+}
+
+.phone_and_tab_nav .right_aligned .profile_dropdown .profile_dropdown_options .profile_block .navbar_user_mobile_number {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: number;
+  font-family: TheLightFont;
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  color: black;
+  width: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .phone_and_tab_nav .right_aligned {
+    margin-right: 2rem;
+  }
+}
+
+.laptop_nav {
+  display: none;
+}
+
+ol {
+  width: 100%;
+  list-style: none;
+}
+
+ol li.bordered {
+  padding: 19px 0px 17px 10px;
+  border: solid 1px #081038;
+  border-radius: 4px;
+  height: 50px;
+  margin: 30px 0 0px 0;
+  text-align: left;
+  font-size: 18px;
+  line-height: 12px;
+  font-family: TheBoldFont;
+}
+
+ol li.selected {
+  color: #232840;
+}
+
+ol li.selected b {
+  color: dodgerblue;
+}
+
+ol li.not_selected {
+  color: gainsboro;
+}
+
+ol li.not_selected b {
+  color: gainsboro;
+}
+
+footer {
+  border-bottom: solid 6px dodgerblue;
+  background-color: #151f3b;
+  width: 100%;
+  padding: 35px 15px 15px 15px;
+}
+
+footer img {
+  height: 40px;
+  width: 155px;
+  margin-bottom: 5px;
+}
+
+footer .footer_flex_mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .footer_flex_mobile span {
+  font-family: TheLightFont;
+  color: gainsboro;
+  margin: 8px;
+  font-size: 14px;
+}
+
+footer .footer_flex_mobile .footer_end {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+footer .footer_flex_mobile i {
+  font-size: 13px;
+}
+
+footer .footer_flex_tab_laptop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media screen and (min-width: 735px) {
+  .phone_and_tab_nav #brand_logo {
+    margin-left: 1rem;
+  }
+  footer {
+    font-family: TheLightFont;
+    font-size: 14px;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+  }
+  footer .footer_flex_mobile {
+    display: none;
+  }
+  footer .footer_flex_tab_laptop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one .footer_flex_inner_one_left {
+    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_one .footer_flex_inner_one_left span {
+    color: black;
+  }
+  footer .footer_flex_tab_laptop .footer_flex_inner_two {
+    margin-top: 2rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .phone_and_tab_nav {
+    display: none;
+  }
+  .laptop_nav {
+    width: 100%;
+    max-width: 1440px;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    height: 80px;
+    padding: 0rem 6rem;
+  }
+  .laptop_nav img {
+    width: 170px;
+  }
+  .laptop_nav .nav_links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .laptop_nav .nav_links p {
+    font-family: TheLightFont;
+    margin: 0px 1rem;
+    font-size: 14px;
+  }
+  .laptop_nav .nav_links .treatment_container {
+    position: relative;
+  }
+  .laptop_nav .nav_links .treatment_container .treatment_dropdown {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: gainsboro;
+    position: absolute;
+    top: 1rem;
+    right: -1.5rem;
+    width: 12rem;
+    border-radius: 8px;
+  }
+  .laptop_nav .nav_links .treatment_container .treatment_dropdown a span {
+    width: 100%;
+    color: #0c1552;
+    display: block;
+    font-family: TheLightFont;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .laptop_nav .nav_links .treatment_container:hover .treatment_dropdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .laptop_nav .nav_buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .laptop_nav .nav_buttons .tvastra_plus {
+    background-color: #3b7abd;
+    color: white;
+    border: none;
+    font-family: TheLightFont;
+    padding: 0px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 2px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .login_button {
+    background-color: #3b7abd;
+    color: white;
+    border: none;
+    font-family: TheLightFont;
+    padding: 0px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 2px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .get_quote_button {
+    font-family: TheLightFont;
+    color: white;
+    border: none;
+    padding: 0px 20px;
+    background-color: #2a2d3e;
+    font-size: 14px;
+    margin: 2px;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    height: 2.5rem;
+  }
+  .laptop_nav .nav_buttons .container_element .loggedinuser {
+    margin-left: 1rem;
+    font-family: TheLightFont;
+    font-size: 15px;
+  }
+  .laptop_nav .nav_buttons .container_element .loggedinuser i {
+    margin-left: 0.5rem;
+  }
+  .laptop_nav .nav_buttons .user_dropdown {
+    display: none;
+    max-height: 0px;
+    overflow: hidden;
+    opacity: 0.1;
+    -webkit-transition: max-height 0.2s,opacity 0.4s ease-out;
+    transition: max-height 0.2s,opacity 0.4s ease-out;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: white;
+    width: 15rem;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 15rem;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0.5rem;
+    font-size: 14px;
+    color: black;
+    font-family: TheLightFont;
+    height: 1.5rem;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .option_hover:hover {
+    background-color: gainsboro;
+    border-left: solid 3px blue;
+    font-size: 16px;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options hr {
+    margin: 0.5rem 0rem 0rem 0rem;
+    background-color: gainsboro;
+    height: 1px;
+    width: 100%;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block {
+    border-bottom: solid 1px gainsboro;
+    padding: 0.5rem;
+    width: 15rem;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "picture name" "picture number";
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_profile_picture {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: picture;
+    width: 60px;
+    height: 60px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-left: 0px;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_username {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: name;
+    color: #0f67be;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    font-family: TheBoldFont;
+    width: auto;
+  }
+  .laptop_nav .nav_buttons .user_dropdown .dropdown_options .profile_block .navbar_user_mobile_number {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: number;
+    font-family: TheLightFont;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+    color: black;
+    width: auto;
+  }
+  .laptop_nav .nav_buttons .loggedinuser:hover {
+    background-color: gainsboro;
+  }
+  .laptop_nav .nav_buttons .container_element:hover > .user_dropdown {
+    display: block;
+    height: 291px;
+    max-height: 291px;
+    opacity: 1;
+    position: absolute;
+    top: 2.9rem;
+    z-index: 100;
+    right: 0rem;
+  }
+  footer {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    font-size: 16px;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: TheBoldFont;
+  src: url("../fonts/TheBoldFont.otf");
+}
+
+@font-face {
+  font-family: TheLightFont;
+  src: url("../fonts/TheLightFont.otf");
+}
+
+@font-face {
+  font-family: karla;
+  src: url("../fonts/OKCKUL+Karla-Regular.ttf");
+}
+
+button {
+  cursor: pointer;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 100%;
+}
+
+.heading_container {
+  display: none;
+}
+
+.sort {
+  margin-top: 58px;
+}
+
+.sort .sort_bar {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sort .sort_bar h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.sort .sort_bar button {
+  font-size: 13px;
+  height: 2.5rem;
+  width: 6rem;
+}
+
+.filters_and_cards .filters {
+  display: none;
+}
+
+.filters_and_cards .hospital_cards {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_tab_laptop {
+  display: none;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border: solid 1px gainsboro;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .card_heading {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px auto;
+      grid-template-columns: 30px auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .card_heading .dashline {
+  color: dodgerblue;
+  display: inline-block;
+  margin: 0px;
+  height: 2px;
+  width: 30px;
+  border: none;
+  background-color: dodgerblue;
+  text-align: left;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .card_heading b {
+  color: dodgerblue;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .details_grid {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 16px auto;
+      grid-template-columns: 16px auto;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  row-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .details_grid i {
+  color: dodgerblue;
+  font-weight: 800;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .details_grid span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .treatment_bubbles {
+  color: #44302a;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .treatment_bubbles .treatment_bubble {
+  margin: 2px;
+  border: solid 1px gainsboro;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile .call_now {
+  margin-top: 1rem;
+  height: 2rem;
+  width: 10rem;
+  background-color: #151f3b;
+  color: white;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filters_and_cards .hospital_cards .hospital_card_mobile img {
+  margin-top: 1rem;
+}
+
+.need_help {
+  margin-top: 3.5rem;
+  padding: 35px 15px 35px 15px;
+  background-color: #7ab0d4;
+  width: 100%;
+}
+
+.need_help .need_help_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.need_help .need_help_flex h3 {
+  color: white;
+}
+
+.need_help .need_help_flex p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.need_help .need_help_flex .submit_query {
+  color: white;
+  background-color: #0099ff;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-size: 22px;
+  height: 4rem;
+  width: 15rem;
+  border: solid 1px transparent;
+}
+
+footer .footer_flex_mobile .tvastra_heading, footer .footer_flex_mobile .follow_us {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  margin-top: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+footer .footer_flex_mobile span.footer_end {
+  margin-top: 1rem;
+  font-size: 13px;
+  color: dimgray;
+}
+
+@media screen and (min-width: 767px) {
+  .sort {
+    margin-bottom: 1rem;
+    padding: 1rem 2rem;
+  }
+  .sort .sort_bar {
+    padding: 0rem;
+  }
+  .filters_and_cards .hospital_cards {
+    padding: 0rem 2rem;
+    margin-bottom: 1rem;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_mobile {
+    display: none;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop {
+    margin-bottom: 1rem;
+    border: solid 1px gainsboro;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 4% 5% 20% 5% auto 205px;
+        grid-template-columns: 4% 5% 20% 5% auto 205px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 0.5rem;
+            column-gap: 0.5rem;
+        grid-template-areas: "dashline hospital_name hospital_name hospital_name hospital_name image" ". map_icon map_text bed_icon bed_text image" ". stethescope_icon stethescope_text . . image" ". treatment_bubbles treatment_bubbles treatment_bubbles treatment_bubbles image" ". button button button . image";
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .dashline {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: dashline;
+    color: dodgerblue;
+    display: inline-block;
+    margin: 0px;
+    height: 2px;
+    width: 30px;
+    border: none;
+    background-color: dodgerblue;
+    text-align: left;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop i {
+    color: dodgerblue;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop span {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop b {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-area: hospital_name;
+    color: dodgerblue;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 6;
+    grid-area: image;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .fa-map-marker-alt {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: map_icon;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .fa-bed {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: bed_icon;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .fa-stethoscope {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: stethescope_icon;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .map_text {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: map_text;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .bed_text {
+    -ms-grid-row: 2;
+    -ms-grid-column: 5;
+    grid-area: bed_text;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .stethescope_text {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: stethescope_text;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .treatment_bubbles {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-area: treatment_bubbles;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .treatment_bubbles .treatment_bubble {
+    margin: 2px;
+    border: solid 1px gainsboro;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: #44302a;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .call_now {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-area: button;
+    height: 2rem;
+    width: 10rem;
+    background-color: #151f3b;
+    color: white;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .heading_container {
+    display: block;
+    width: 100%;
+    margin-top: 80px;
+    height: 15rem;
+    background-size: cover;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(159, 187, 211, 0.9)), to(rgba(159, 187, 211, 0.9))), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
+    background-image: linear-gradient(0deg, rgba(159, 187, 211, 0.9) 0%, rgba(159, 187, 211, 0.9) 100%), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .heading_container h4 {
+    margin-left: 6rem;
+    font-size: 25px;
+  }
+  .heading_container h4 u {
+    font-family: TheLightFont;
+  }
+  .sort {
+    margin-top: 0rem;
+    padding: 1rem 6rem;
+  }
+  .filters_and_cards {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25% auto;
+        grid-template-columns: 25% auto;
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+  }
+  .filters_and_cards .hospital_cards {
+    padding-right: 6rem;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop {
+        grid-template-areas: "dashline hospital_name hospital_name hospital_name hospital_name image" ". map_icon map_text bed_icon bed_text image" ". stethescope_icon stethescope_text . . image" ". . treatment_bubbles treatment_bubbles treatment_bubbles image" ". button button button . image";
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .treatment_bubbles .more {
+    background-color: gainsboro;
+  }
+  .filters_and_cards .hospital_cards .hospital_card_tab_laptop .call_now {
+    height: 2.5rem;
+    font-size: 15px;
+  }
+  .filters_and_cards .filters {
+    padding-left: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .filters_and_cards .filters h4 {
+    background-color: #e7e7e7;
+    width: 100%;
+    height: 2rem;
+    padding-top: 7px;
+    padding-left: 1rem;
+    font-weight: 550;
+  }
+  .filters_and_cards .filters .filter_head {
+    margin-top: 1.5rem;
+    padding: 5px 0px 5px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .filters_and_cards .filters .filter_head span {
+    font-size: 16px;
+    font-family: TheLightFont;
+  }
+  .filters_and_cards .filters .filter_head .filters_search_icon {
+    padding-bottom: 5px;
+  }
+  .filters_and_cards .filters .filter_head .filters_search_icon hr {
+    display: inline-block;
+    width: 1rem;
+    height: 4px;
+    background-color: gainsboro;
+    border: none;
+  }
+  .filters_and_cards .filters .filter_head .filters_search_icon i {
+    color: dodgerblue;
+    font-size: 14px;
+    position: relative;
+    bottom: 5px;
+  }
+  .filters_and_cards .filters .filter_options {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto 1fr;
+        grid-template-columns: auto 1fr;
+    -webkit-column-gap: 5px;
+            column-gap: 5px;
+    row-gap: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .filters_and_cards .filters .filter_options span {
+    font-family: TheLightFont;
+    font-size: 13px;
+  }
+  .filters_and_cards .filters span.show_more {
+    margin-left: 1rem;
+    font-family: TheLightFont;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: dodgerblue;
+  }
+  .filters_and_cards .filters hr.filter_break {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .need_help {
+    padding: 3rem 6rem;
+    padding-right: 6rem;
+    background-color: #9cbfda;
+    width: 100%;
+    height: 190px;
+  }
+  .need_help .need_help_flex {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .need_help .need_help_flex .need_help_left_div h3 {
+    font-size: 40px;
+    text-align: left;
+  }
+  .need_help .need_help_flex .submit_query {
+    margin-top: 0rem;
+    width: 290px;
+    height: 65px;
+    display: block;
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=hospital.css.map */

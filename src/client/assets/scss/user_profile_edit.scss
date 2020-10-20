@@ -1,0 +1,267 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.siteflow{
+    width: 100%;
+    padding: 0rem 1rem;
+    background-color: gainsboro;
+    .dashboard_and_accounts{
+        margin-top: 58px;
+        .dashboard{
+            display: none;
+        }
+        .accounts{
+            margin-top: 5rem;
+            background-color: white;
+            hr{
+                margin: 0px;
+                margin-top: 1rem;
+            }
+            .accounts_header{
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h2{
+                    font-size: 25px;
+                }
+                .save_changes{
+                    font-family: TheBoldFont;
+                    letter-spacing: 1px;
+                    height: 2.5rem;
+                    border: none;
+                    background-color: #3d82ff;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+            .form_container{
+                padding: 1rem;
+                h3{
+                    text-align: left;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    color: black;
+                }
+                .profile_picture_input_container{
+                    border: solid 1px black;
+                    padding: 10px;
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    row-gap: 4px;
+                    column-gap: 1rem;
+                    grid-template-areas: 
+                    "new_profile_picture text"
+                    "new_profile_picture upload_link";
+                    #new_profile_picture{
+                        grid-area: new_profile_picture;
+                        height: 60px;
+                        width: 40px;
+                        object-fit: cover;
+                    }
+                    span{
+                        grid-area: text;
+                        font-family: TheLightFont;
+                    }
+                    label{
+                        font-family: TheLightFont;
+                        grid-area: upload_link;
+                        color: dodgerblue;
+                    }
+                }
+                label{
+                    display: block;
+                    font-family: TheBoldFont;
+                    margin-top: 0.5rem;
+                    letter-spacing: 1px;
+                }
+                input{
+                    width: 100%;
+                    height: 2.5rem;
+                    font-family: TheLightFont;
+                    padding: 0rem 1rem;
+                    margin-top: 4px;
+                }
+                select{
+                    width: 100%;
+                    height: 2.5rem;
+                    font-family: TheLightFont;
+                    padding: 0rem 1rem;
+                    margin-top: 4px;
+                }
+                .phone_label_container{
+                    display: flex;
+                    justify-content: space-between;
+                    .edit{
+                        color: dodgerblue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+
+
+
+@media screen and (min-width:768px){
+    .siteflow{
+        padding: 2rem;
+        .dashboard_and_accounts{
+            .accounts{
+                hr{
+                    margin-bottom: 0.5rem;
+                }
+                .accounts_header{
+                    padding: 2rem 2rem 1.5rem 2rem;
+                    h2{
+                        font-size: 30px;
+                    }
+                    .save_changes{
+                        font-size: 16px;
+                        padding: 0.5rem 1rem;
+                    }
+                }
+                .form_container{
+                    .form_segment{
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 2rem;
+                        .profile_picture_input_container{
+                            #new_profile_picture{
+                                width: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+
+    .siteflow{
+        width: 100%;
+        min-width: 1024px;
+        @media screen and (min-width:1366px){
+            min-width: 1348px
+        }
+        max-width: 1440px;
+        padding: 3rem 6rem;
+        background-color: white;
+        .dashboard_and_accounts{
+            max-width: 1440px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            .dashboard{
+             display: block;
+             .dashboard_header{
+                 padding: 2rem;
+                 padding-left: 0px;
+                h2{
+                    text-align: left;
+                }
+             }
+             .dashboard_options{
+                 padding: 2rem;
+                 padding-left: 0px;
+                 padding-top: 0rem;
+                 display: grid;
+                 grid-template-columns: auto;
+                 i{
+                     width: 20px;
+                     height: 20px;
+                     color: dodgerblue;
+                 }
+                 .dashboard_option{
+                     align-self: center;
+                     display:flex;
+                     align-items: center;
+                     height: 2.5rem;
+                     font-family: TheLightFont;
+                     font-size: 18px;
+                     color: black;
+                     i{
+                        margin-left: 1rem;
+                     }
+                     span{
+                         margin:auto 1rem;
+                     }
+                 }
+                 .selected_option{
+                     color: dodgerblue;
+                     font-size: 20px;
+                     font-family: TheBoldFont;
+                 }
+                 .dashboard_option:hover {
+                     border-left: solid 4px dodgerblue;
+                     font-size: 20px;
+                     background-color: gainsboro;
+                 }
+             }
+
+            }
+            .accounts{
+                margin-top: 0rem;
+                .accounts_header{
+                    h2{
+                        font-size: 32px;
+                    }
+                    .save_changes{
+                        font-size: 18px;
+                    }
+                }
+                .form_container{
+                    .form_segment{
+                        .profile_picture_input_container{
+                            margin-top: 0.5rem;
+                        }
+                        label{
+                            font-size: 18px;
+                        }
+                        input{
+                            font-size: 16px;
+                        }
+                        select{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

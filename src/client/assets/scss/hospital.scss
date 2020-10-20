@@ -1,0 +1,459 @@
+@import "./theme.scss";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    // background-color: blue;
+
+}
+
+.heading_container{
+    display: none;
+}
+
+.sort{
+    // border: solid 1px black;
+    margin-top: 58px;
+    // padding: 1rem;
+    .sort_bar{
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        h4{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        button{
+            font-size: 13px;
+            height: 2.5rem;
+            width: 6rem;
+        }
+    }
+}
+
+.filters_and_cards{
+    .filters{
+        display: none;
+    }
+    .hospital_cards{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    .hospital_card_tab_laptop{
+        display: none;
+    }
+    .hospital_card_mobile{
+        margin-bottom: 0.5rem;
+        width: 100%;
+        border: solid 1px gainsboro;
+        display: flex;
+        flex-direction: column;
+        .card_heading{
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 30px auto;
+            align-items: center;
+            column-gap: 5px;
+            .dashline{
+                @include bluetext();
+                display: inline-block;
+                margin: 0px;
+                height: 2px;
+                width: 30px;
+                border: none;
+                background-color: dodgerblue;
+                text-align: left;
+            }
+            b{
+                @include bluetext();
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+
+        .details_grid{
+            margin-top: 1rem;
+            padding-left: 1rem;
+            display: grid;
+            grid-template-columns: 16px auto;
+            column-gap: 15px;
+            row-gap: 10px;
+            align-items: center;
+            i{
+                color: dodgerblue;
+                font-weight: 800;
+            }
+            span{
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+        .treatment_bubbles{
+            color: rgb(68,48,42);
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            width: 100%;
+            display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            .treatment_bubble{
+                margin: 2px;
+                border: solid 1px gainsboro;
+                border-radius: 20px;
+                padding: 10px;
+            }
+        }
+        .call_now{
+            margin-top: 1rem;
+            height: 2rem;
+            width: 10rem;
+            @include darkblueback();
+            @include whitetext();   
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img{
+            margin-top: 1rem;
+        }
+    }
+}
+}
+
+.need_help{
+    margin-top: 3.5rem;
+    padding: 35px 15px 35px 15px;
+    background-color:rgb(122,176,212);
+    width: 100%;
+   .need_help_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h3{
+        @include whitetext();
+    }
+    p{
+        text-align: center;
+        margin-top: 15px;
+    }   
+    .submit_query{
+        @include whitetext();
+        background-color: rgb(0,153,255);
+        border-radius: 6px;
+        margin-top: 1rem;
+        font-size: 22px;
+        height: 4rem;
+        width:15rem;
+        border: solid 1px transparent;
+    }
+   }
+}
+
+footer{
+    .footer_flex_mobile{
+        .tvastra_heading{
+            @include whitetext();
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin-top: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .follow_us{
+            @extend .tvastra_heading;
+        }
+        span.footer_end{
+            margin-top: 1rem;
+            font-size: 13px;
+            color: dimgray;
+        }
+    }
+}
+
+
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+
+
+@media screen and (min-width:767px){
+
+    .sort{
+        margin-bottom: 1rem;
+        padding: 1rem 2rem;
+        .sort_bar{
+            padding: 0rem;
+        }
+    }
+
+    .filters_and_cards{
+        .hospital_cards{
+            padding: 0rem 2rem;
+            margin-bottom: 1rem;
+            .hospital_card_mobile{
+                display: none;
+            }
+            .hospital_card_tab_laptop{
+                margin-bottom: 1rem;
+                border: solid 1px gainsboro;
+                display:grid;
+                grid-template-columns: 4% 5% 20% 5% auto 205px;
+                align-items: center;
+                column-gap: 0.5rem;
+                grid-template-areas: 
+                "dashline hospital_name hospital_name hospital_name hospital_name image"
+                ". map_icon map_text bed_icon bed_text image"
+                ". stethescope_icon stethescope_text . . image"
+                ". treatment_bubbles treatment_bubbles treatment_bubbles treatment_bubbles image"
+                ". button button button . image";
+                .dashline{
+                    grid-area: dashline;
+                    @include bluetext();
+                    display: inline-block;
+                    margin: 0px;
+                    height: 2px;
+                    width: 30px;
+                    border: none;
+                    background-color: dodgerblue;
+                    text-align: left;
+                }
+                i{
+                    color: dodgerblue;
+                }
+                span{
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                b{
+                    grid-area:hospital_name;
+                    @include bluetext();
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+                img{
+                    grid-area: image;
+    
+                }
+                .fa-map-marker-alt{
+                    grid-area: map_icon;
+                }
+                .fa-bed{
+                    grid-area: bed_icon;
+                }
+                .fa-stethoscope{
+                    grid-area: stethescope_icon;
+                }
+                .map_text{
+                    grid-area: map_text;
+                }
+                .bed_text{
+                    grid-area: bed_text;
+                }
+                .stethescope_text{
+                    grid-area: stethescope_text;
+                }
+                .treatment_bubbles{
+                    grid-area: treatment_bubbles;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                .treatment_bubble{
+                    margin: 2px;
+                    border: solid 1px gainsboro;
+                    border-radius: 20px;
+                    padding: 10px;
+                    font-size: 16px;
+                    color: rgb(68,48,42);
+                }
+                }
+                .call_now{
+                    grid-area: button;
+                    height: 2rem;
+                    width: 10rem;
+                    @include darkblueback();
+                    @include whitetext();   
+                    border: none;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+    
+    .heading_container{
+        display: block;
+        width: 100%;
+        margin-top: 80px;
+        height: 15rem;
+        background-size: cover; 
+        background-image: linear-gradient(0deg, rgba(159,187,211,0.9) 0%, rgba(159,187,211,0.9) 100%),
+        url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h4{
+            margin-left: 6rem;
+            font-size: 25px;
+            u{
+                font-family: TheLightFont;
+            }
+        }
+    }
+    .sort{
+        margin-top: 0rem;
+        padding: 1rem 6rem;
+    }
+    .filters_and_cards{
+        display: grid;
+        grid-template-columns: 25% auto;
+        column-gap: 10px;
+        // grid-template-areas: "filters doctors";
+    .hospital_cards{
+        padding-right: 6rem;
+        .hospital_card_tab_laptop{
+            grid-template-areas: 
+            "dashline hospital_name hospital_name hospital_name hospital_name image"
+            ". map_icon map_text bed_icon bed_text image"
+            ". stethescope_icon stethescope_text . . image"
+            ". . treatment_bubbles treatment_bubbles treatment_bubbles image"
+            ". button button button . image";
+            .treatment_bubbles{
+                .more{
+                    background-color: gainsboro;
+                }
+            }
+            .call_now{
+                height: 2.5rem;
+                font-size: 15px;
+            }
+        }
+    }
+    .filters{
+            
+        padding-left: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        h4{
+            background-color: rgb(231,231,231);
+            width: 100%;
+            height: 2rem;
+            padding-top: 7px;
+            padding-left: 1rem;
+            font-weight:550;
+        }
+        .filter_head{
+            margin-top: 1.5rem;
+            padding: 5px 0px 5px 16px;
+            display: flex;
+            justify-content: space-between;
+            span{
+                font-size: 16px;
+                font-family: TheLightFont;
+            }
+           .filters_search_icon{
+               padding-bottom: 5px;
+            hr{
+                display: inline-block;
+                width: 1rem;
+                height: 4px;
+                background-color: gainsboro;
+                border: none;
+            }
+            i{
+                color: dodgerblue;
+                font-size: 14px;
+                position: relative;
+                bottom: 5px;
+            }
+           }
+        }
+        .filter_options{
+            margin-left: 1rem;
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 5px;
+            row-gap: 5px;
+            align-items: center;
+            span{
+                font-family: TheLightFont;
+                font-size: 13px;
+            }
+        }
+
+        span.show_more{
+            margin-left: 1rem;
+            font-family: TheLightFont;
+            margin-top: 1rem;
+            font-size: 14px;
+            color: dodgerblue;
+        }
+
+        hr.filter_break{
+            margin-top: 1rem;
+            width: 100%;
+        }
+    }
+    }
+    .need_help{
+        padding:3rem 6rem;
+        padding-right: 6rem;
+        background-color: rgb(156,191,218);
+        width: 100%;
+        height: 190px;
+        .need_help_flex{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+           .need_help_left_div{
+            h3{
+                font-size: 40px;
+                text-align: left;
+            }
+           }
+            .submit_query{
+                margin-top: 0rem;
+                width: 290px;
+                height: 65px;
+                display: block;
+                font-size: 20px;
+            }
+        }
+    }
+}

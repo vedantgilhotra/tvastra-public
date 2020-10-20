@@ -1,0 +1,266 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.siteflow{
+    margin-top: 58px;
+    padding: 1rem;
+    background-color: white;
+    .appointment_info{
+        padding: 1rem;
+        border: solid 1px black;
+        h3{
+            text-align: left;
+            color: black;
+            position: relative;
+            color: dodgerblue;
+        }
+        h3::before{
+            content: "-";
+            position: relative;
+            right: 1rem;
+            margin: 0px;
+            color: dodgerblue;
+        }
+        .information_grid{
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 20px auto;
+            align-items: center;
+            row-gap: 0.5rem;
+            column-gap: 1rem;
+            i{
+                color: dodgerblue;
+            }
+            span{
+                font-family: TheLightFont;
+                font-size: 16px;
+            }
+        }
+        .reschedule_appointment{
+            margin-top: 1rem;
+            padding: 0rem 1rem;
+            border: none;
+            border-radius: 8px;
+            height: 2.5rem;
+            background-color: dodgerblue;
+            color: white;
+            font-family: TheBoldFont;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+        .day_selector{
+            // display: none;
+            display: grid;
+            padding: 1rem;
+            grid-template-columns: 20px auto 20px;
+            align-items: center;
+            .scroll_back{
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                background-color: gainsboro;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    font-size: 16px;
+                    color: rgb(10, 85, 161);
+                }
+            }
+            .scroll_forward{
+                @extend .scroll_back;
+            }
+            .days_availability{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .day_entry{
+                    margin-bottom: 1rem;
+                    display: none;
+                    .day_heading{
+                        text-align: center;
+                        display: block;
+                        color: rgb(2, 40, 78);
+                        font-family: TheBoldFont;
+                        font-size: 16px;
+                    }
+                    .slots_available{
+                        text-align: center;
+                        display: block;
+                        color: dodgerblue;
+                        font-size: 14px;
+                        font-family: TheLightFont;
+                    }
+                }
+                .active_day{
+                    display: block;
+                }
+            }
+        }
+        .slot_selector{
+            display: none;
+            padding: 1rem;
+            .slot_phase_heading{
+                display: block;
+                font-family: TheLightFont;
+                text-align: center;
+            }
+            .morning_slots{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                .hospital_0{
+                    margin: 0.5rem;
+                    height: 2rem;
+                    padding: 4px; 
+                    font-family: TheLightFont;
+                    font-size: 14px;
+                    color: green;
+                    border: solid 2px green;   
+                    cursor: pointer;
+                }
+                .hospital_1{
+                    @extend .hospital_0;
+                    color: blue;
+                    border: solid 2px blue;
+                }
+                .hospital_2{
+                    @extend .hospital_0;
+                    color: yellow;
+                    border: solid 2px yellow;
+                }
+                .hospital_3{
+                    @extend .hospital_0;
+                    color: black;
+                    border: solid 2px black;
+                }
+                .hospital_4{
+                    @extend .hospital_0;
+                    color: dodgerblue;
+                    border: solid 2px dodgerblue;
+                }
+            }
+            .noon_slots{
+               @extend .morning_slots;
+            }
+            .evening_slots{
+                @extend .morning_slots;
+            }
+            .hospital_zero{
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                    text-align: center;
+                    color: green;
+                }
+            }
+            .hospital_one{
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                    text-align: center;
+                    color: blue;
+                }
+            }
+            .hospital_two{
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                    text-align: center;
+                    color: yellow;
+                }
+            }
+            .hospital_three{
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                    text-align: center;
+                    color: black;
+                }
+            }
+            .hospital_four{
+                span{
+                    display: block;
+                    font-family: TheLightFont;
+                    font-size: 18px;
+                    text-align: center;
+                    color: dodgerblue;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+
+@media screen and (min-width:768px){
+    .siteflow{
+        .appointment_info{
+            margin-bottom: 10rem;
+            .information_grid{
+                grid-template-columns: 20px auto 20px auto;
+            }
+            .day_selector{
+                .days_availability{
+                    flex-direction: row;
+                    .day_entry{
+                        margin: 1rem;
+                        .day_heading{
+                            font-size: 18px;
+                        }
+                        .slots_available{
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        @media screen and (min-width:1366px){
+            min-width: 1348px
+        }
+        margin-top: 80px;
+        .appointment_info{
+            margin-bottom: 15rem;
+        }
+    }
+}

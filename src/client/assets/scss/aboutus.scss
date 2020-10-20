@@ -1,0 +1,358 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+}
+h1{
+    font-size: 28px;
+    @include whitetext();
+    font-family: TheBoldFont;
+
+    
+}
+h2{
+    font-size: 22px;
+    color: #0c1552;
+    line-height: 27px;
+}
+p{
+    font-size: 13px;
+    @media screen and (min-width:768px){
+        font-size: 14px;
+        text-align: left;
+        line-height: 25px;
+    }
+}
+.heading_container{
+    padding: 1rem;
+    width: 100%;
+    margin-top: 58px;
+    height: 400px;
+    background: linear-gradient(0deg, rgba(38, 40, 41, 0.3) 0%,rgba(38, 40, 41, 0.3) 100%),url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span{
+        @include whitetext();
+        text-align: center;
+        margin-top: 1.5rem;
+        font-family: TheLightFont;
+        font-size: 14px;
+    }
+}
+.siteflow{
+    width: 100%;
+    .beggining{
+        padding: 1rem;
+        p{
+            margin-top: 1.5rem;
+        }
+        img{
+            display: block;
+            margin: 1.5rem auto;
+        }
+        #doctor_image{
+            width: 100%;
+        }
+    }
+    .stats{
+        background-color: black;
+        padding: 1rem;
+        video{
+            display: none;
+        }
+        h2{
+            @include whitetext();
+        }
+        p{
+            @include whitetext();
+            margin-top: 1.5rem;
+        }
+        .free_checkup{
+            font-family: TheLightFont;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1px;
+            display: block;
+            background-color: rgb(1,115,178);
+            @include whitetext();
+            border: solid 1px transparent;
+            box-shadow: none;
+            border-radius: 5px;
+            height: 2rem;
+            width: 11rem;
+            margin: 1.5rem auto 1rem auto;
+        }
+        .stat_div{
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 110px;
+            width: 100%;
+            border: solid 2px rgb(51,51,51);
+            border-radius: 3px;
+            small{
+                margin-top: 0.5rem;
+                color: white;
+                font-family: TheLightFont;
+                font-size: 10px;
+                letter-spacing: 1px;
+                color: rgb(99, 99, 99);
+            }
+        }
+    }
+    .need_help{
+        padding: 35px 15px 35px 15px;
+        background-color:rgb(122,176,212);
+        width: 100%;
+       .need_help_flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        h3{
+            @include whitetext();
+            font-size: 24px;
+        }
+        p{
+            text-align: center;
+            font-size: 16px;
+            margin-top: 15px;
+        }   
+        button{
+            width:170px;
+            font-family: TheLightFont;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 1px;
+            display: block;
+            background-color: rgb(1,115,178);
+            @include whitetext();
+            border: solid 1px transparent;
+            box-shadow: none;
+            border-radius: 8px;
+            height:3rem;
+            margin-top:1.5rem;
+        }
+       }
+    }
+}
+
+
+
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+
+
+@media screen and (min-width:768px){
+    .heading_container{
+        span{
+            font-size: 16px;
+        }
+    }
+    .siteflow{
+        .beggining{
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: auto auto;
+            .text_content{
+                p{
+                    font-size: 15px;
+                    text-align: left;
+                    line-height: 25px;
+                }
+               img{
+                    margin: 1.5rem auto 1.5rem 0px;
+               }
+            }
+            #doctor_image{
+                margin: 0px;
+            }
+        }
+        .stats{
+            padding: 1.5rem;
+            h2{
+                text-align: left;
+            }
+            p{
+                text-align: left;
+            }
+            .free_checkup{
+                margin-left: 0rem;
+                margin-right: auto;
+            }
+            .stats_box_flex{
+                margin-top: 3rem;
+                margin-bottom: 1rem;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                column-gap: 0.5rem;
+                .stat_div{
+                    height: 95px;
+                    small{
+                        font-size: 12px;
+                        font-weight: bolder;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+
+@media screen and (min-width:1024px){
+    .heading_container{
+        height: 400px;
+        h1{
+            font-size: 36px;
+        }
+        span{
+            font-size: 18px;
+        }
+    }
+    .siteflow{
+        .beggining{
+            grid-template-columns: 50% 50%;
+            padding: 4rem 6rem;
+            column-gap: 8rem;
+            .text_content{
+                h2{
+                    font-size: 30px;
+                    text-align: left;
+                    line-height: 38px;
+                }
+                p{
+                    text-align: left;
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+            }
+            #doctor_image{
+              width: 295px;
+              height: 400px;
+            }
+        }
+        .stats{
+            background: none;
+            padding: 4rem 6rem;
+            display: grid;
+            grid-template-columns: 50% auto;
+            column-gap: 2rem;
+            .text_content{
+                h2{
+                    font-size: 30px;
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+                .free_checkup{
+                    margin-top: 5rem;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    width: 14rem;
+                }
+            }
+            .stats_box_flex{
+                margin: 0rem;
+                align-self: flex-start;
+                row-gap: 0.5rem;
+                .stat_div{
+                    margin: 0rem;
+                    padding: 5rem 2rem;
+                }
+            }
+            video{
+                display: block;
+            }
+        }
+        .video-container{
+            
+                height: 464px;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            
+        }
+        video {
+            display: block;
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+          }
+        
+        .need_help{
+            background-color: rgb(156,191,218);
+            width: 100%;
+            height: 190px;
+            padding: 3rem 6rem;
+            .need_help_flex{
+                margin-top: auto;
+                margin-bottom: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+               .need_help_left_div{
+                   
+                h3{
+                    font-size: 40px;
+                    text-align: left;
+                }
+               }
+                button{
+                    
+                    width: 290px;
+                    height: 65px;
+                    display: block;
+                    font-size: 20px;
+                }
+            }
+        }
+        footer{
+            span{
+                font-size: 16px;
+                font-family: TheLightFont;
+            }
+        }
+    }
+}

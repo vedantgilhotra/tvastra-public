@@ -1,0 +1,1111 @@
+@import "./theme.scss";
+
+*{
+    box-sizing: border-box;
+}
+.message{
+    background-color: white;
+    position: absolute;
+    top: 6rem;
+    // right: 0rem;
+    height: 4rem;
+    padding: 0.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 40px auto 20px;
+    align-items: center;
+    column-gap: 10px;
+    grid-template-areas: 
+    "big_icon heading small_icon"
+    "big_icon message small_icon";
+    .big_icon{
+        grid-area: big_icon;
+        font-size: 40px;
+    }
+    .small_icon{
+        grid-area: small_icon;
+        font-size: 20px;
+    }
+    h2{
+        grid-area: heading;
+        text-align: left;
+        font-size: 16px;
+    }
+    span{
+        grid-area: message;
+        font-family: TheLightFont;
+        font-size: 12px;
+    }
+}
+.incorrect{
+    border-left:solid 4px red;
+    .big_icon{
+        color: red;
+    }
+    h2{
+        color: red;
+    }
+    span{
+        color: red;
+    }
+}
+.success{
+    border-left:solid 4px green;
+    top: 7rem;
+    .big_icon{
+        color: green;
+    }
+    h2{
+        color: green;
+    }
+    span{
+        color: green;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    // background-color: blue;
+
+}
+
+.heading_container{
+    display: none;
+}
+
+.sort{
+    // border: solid 1px black;
+    margin-top: 58px;
+    // padding: 1rem;
+    .sort_bar{
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        h4{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .dropbtn{
+            font-size: 13px;
+            height: 2.5rem;
+            width: 6rem;
+            border: none;
+            border: solid 1px black;
+            font-size: 14px;
+            font-family: TheLightFont;
+            background-color: gainsboro;
+            padding: 0.5rem;
+            option{
+                display: block;
+                font-size: 14px;
+                height: 2rem;
+                background-color: white;
+                padding: 0.5rem;    
+            }
+        }
+    }
+}
+
+.doctor_cards_mobile{
+    padding: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    .doctor_card{
+        border: solid 1px rgba(128, 128, 128, 0.527);
+        width: 100%;
+        padding-top: 1rem;
+        .dashline{
+            @include bluetext();
+            display: inline-block;
+            margin: 0px;
+            height: 2px;
+            width: 30px;
+            border: none;
+            background-color: dodgerblue;
+            text-align: left;
+            position: relative;
+            bottom: 5px;
+        }
+        b{
+            @include bluetext();
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .doctor_details_grid{
+            margin-top: 10px;
+            // margin-left: 10px;
+            display: grid;
+            grid-template-columns: 16px 1fr;
+            column-gap: 1rem;
+            row-gap: 1rem;
+            font-family: TheLightFont;
+
+            grid-template-areas: 
+            "certificate1 k5"
+            "certificate2 k1"
+            "clock k2"
+            "building k3"
+            "map k4"
+            "fee k6"
+            "button button"
+            "doctor_image doctor_image";
+            i{
+                margin-left: 10px;
+            }
+            .fa-certificate{
+                @include bluetext();
+                grid-area: certificate1;
+            }
+            .certificate{
+                grid-area: certificate2;
+                margin-left: 10px;
+            }
+            .fa-clock{
+                @include bluetext();
+                grid-area: clock;
+            }
+            .fa-building{
+                @include bluetext();
+                grid-area: building;
+            }
+            .fa-map-marker-alt{
+                @include bluetext();
+                grid-area: map;
+            }
+            .fa-rupee-sign{
+                @include bluetext();
+                grid-area: fee;
+            }
+            .text1{
+                grid-area: k1;
+            }
+            .text2{
+                grid-area: k2;
+            }
+            .text3{
+                grid-area: k3;
+            }
+            .text4{
+                grid-area: k4;
+            }
+            .text5{
+                grid-area: k5;
+            }
+            .text6{
+                grid-area: k6;
+            }
+            img{
+                width: 100%;
+            }
+            .book_appointment{
+                grid-area: button;
+                // width: 100%;
+                justify-self: center;
+                background-color: rgb(2,20,51);
+                @include whitetext();
+                border: none;
+                width: 12rem;
+                height: 2rem;
+            }
+                
+            .doctor_image{
+                grid-area: doctor_image;
+                height: 355px;
+                object-fit: cover;
+            }
+        }
+        .slots_container_mobile{
+            .day_selector_mobile{
+                display: none;
+                padding: 1rem;
+                grid-template-columns: 20px auto 20px;
+                align-items: center;
+                .scroll_back_mobile{
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    background-color: gainsboro;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i{
+                        font-size: 16px;
+                        color: rgb(10, 85, 161);
+                    }
+                }
+                .scroll_forward_mobile{
+                    @extend .scroll_back_mobile;
+                }
+                .days_availability_mobile{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .day_entry_mobile{
+                        margin-bottom: 1rem;
+                        display: none;
+                        .day_heading_mobile{
+                            text-align: center;
+                            display: block;
+                            color: rgb(2, 40, 78);
+                            font-family: TheBoldFont;
+                            font-size: 16px;
+                        }
+                        .slots_available_mobile{
+                            text-align: center;
+                            display: block;
+                            color: dodgerblue;
+                            font-size: 14px;
+                            font-family: TheLightFont;
+                        }
+                        .active_slots_available_mobile{
+                            text-decoration: underline;
+                        }
+                    }
+                    .active_day_mobile{
+                        display: block;
+                    }
+                }
+            }
+            .slot_selector_mobile{
+                display: none;
+                padding: 1rem;
+                .slot_phase_heading_mobile{
+                    display: block;
+                    font-family: TheLightFont;
+                    text-align: center;
+                }
+                .morning_slots_mobile{
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .hospital_0_mobile{
+                        margin: 0.5rem;
+                        height: 2rem;
+                        padding: 4px; 
+                        font-family: TheLightFont;
+                        font-size: 14px;
+                        color: green;
+                        border: solid 2px green;   
+                    }
+                    .hospital_1_mobile{
+                        @extend .hospital_0_mobile;
+                        color: blue;
+                        border: solid 2px blue;
+                    }
+                    .hospital_2_mobile{
+                        @extend .hospital_0_mobile;
+                        color: yellow;
+                        border: solid 2px yellow;
+                    }
+                    .hospital_3_mobile{
+                        @extend .hospital_0_mobile;
+                        color: black;
+                        border: solid 2px black;
+                    }
+                    .hospital_4_mobile{
+                        @extend .hospital_0_mobile;
+                        color: dodgerblue;
+                        border: solid 2px dodgerblue;
+                    }
+                }
+                .noon_slots_mobile{
+                   @extend .morning_slots_mobile;
+                }
+                .evening_slots_mobile{
+                    @extend .morning_slots_mobile;
+                }
+                .hospital_zero_mobile{
+                    span{
+                        display: block;
+                        font-family: TheLightFont;
+                        font-size: 18px;
+                        text-align: center;
+                        color: green;
+                    }
+                }
+                .hospital_one_mobile{
+                    span{
+                        display: block;
+                        font-family: TheLightFont;
+                        font-size: 18px;
+                        text-align: center;
+                        color: blue;
+                    }
+                }
+                .hospital_two_mobile{
+                    span{
+                        display: block;
+                        font-family: TheLightFont;
+                        font-size: 18px;
+                        text-align: center;
+                        color: yellow;
+                    }
+                }
+                .hospital_three_mobile{
+                    span{
+                        display: block;
+                        font-family: TheLightFont;
+                        font-size: 18px;
+                        text-align: center;
+                        color: black;
+                    }
+                }
+                .hospital_four_mobile{
+                    span{
+                        display: block;
+                        font-family: TheLightFont;
+                        font-size: 18px;
+                        text-align: center;
+                        color: dodgerblue;
+                    }
+                }
+            }
+        }
+       
+    }
+    .pagination_mobile{
+        margin-top: 2rem;
+        display: block;
+        justify-self: center;
+        margin-bottom: 2rem;
+        a{
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: solid 1px blue;
+            border-radius: 5px;
+            font-size: 22px;
+            background-color: white;
+            color: dodgerblue;
+            margin: 5px;
+            padding: 5px;
+            font-family: TheBoldFont;
+            text-align: center;
+        }
+        .active_page_mobile{
+            background-color: dodgerblue;
+            color: white;
+        }
+        a:hover:not(.active_page_mobile){
+            background-color: #ddd;
+        }
+    }
+    
+}
+
+.filters_and_doctors_tab_laptop{
+    display: none;
+}
+
+.need_help{
+    padding: 35px 15px 35px 15px;
+    background-color:rgb(122,176,212);
+    width: 100%;
+   .need_help_flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    h3{
+        @include whitetext();
+    }
+    p{
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+    }   
+    .submit_query{
+        @include whitetext();
+        background-color: rgb(0,153,255);
+        border: none;
+        border-radius: 6px;
+        margin-top: 1rem;
+        font-size: 22px;
+        height: 4rem;
+        width:15rem;
+    }
+   }
+}
+
+footer{
+    .footer_flex_mobile{
+        .tvastra_heading{
+            @include whitetext();
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin-top: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+        .follow_us{
+            @extend .tvastra_heading;
+        }
+        span.footer_end{
+            margin-top: 1rem;
+            font-size: 13px;
+            color: dimgray;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:735px){
+    
+    .heading_container{
+        display: block;
+        width: 100%;
+        margin-top: 58px;
+        height: 15rem;
+        background-size: cover; 
+        background-image: linear-gradient(0deg, rgba(159,187,211,0.9) 0%, rgba(159,187,211,0.9) 100%),
+        url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png");
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h4{
+            margin-left: 2rem;
+            font-size: 25px;
+            u{
+                font-family: TheLightFont;
+            }
+        }
+    }
+
+    .sort{
+        padding: 0px;
+        margin-top: 0px;
+        .sort_bar{
+            padding: 1rem 2rem;
+        }
+        h4{
+            font-family: TheLightFont;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    .doctor_cards_mobile{
+        display: none;
+    }
+
+    .filters_and_doctors_tab_laptop{
+        display: grid;
+        grid-template-columns: 25% auto;
+        column-gap: 10px;
+        grid-template-areas: "filters doctors"
+        "pagination pagination";
+        .filters{
+            
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+
+            h4{
+                background-color: rgb(231,231,231);
+                width: 100%;
+                height: 2rem;
+                padding-top: 7px;
+                padding-left: 1rem;
+                font-weight:550;
+            }
+            .selected_filters_laptop{
+                display: none;
+            }
+            .filter_head{
+                margin-top: 1.5rem;
+                padding: 5px 0px 5px 16px;
+                display: flex;
+                justify-content: space-between;
+                span{
+                    font-size: 16px;
+                    font-family: TheLightFont;
+                }
+               .filters_search_icon{
+                   padding-bottom: 5px;
+                hr{
+                    display: inline-block;
+                    width: 1rem;
+                    height: 4px;
+                    background-color: gainsboro;
+                    border: none;
+                }
+                i{
+                    color: dodgerblue;
+                    font-size: 14px;
+                    position: relative;
+                    bottom: 5px;
+                }
+               }
+            }
+            .filter_options{
+                margin-left: 1rem;
+                margin-top: 1rem;
+                display: grid;
+                grid-template-columns: auto 1fr;
+                column-gap: 5px;
+                row-gap: 5px;
+                align-items: center;
+                max-height: 15rem;
+                overflow-y: auto;
+                span{
+                    font-family: TheLightFont;
+                    font-size: 13px;
+                }
+            }
+
+            span.show_more{
+                margin-left: 1rem;
+                font-family: TheLightFont;
+                margin-top: 1rem;
+                font-size: 14px;
+                color: dodgerblue;
+            }
+
+            hr.filter_break{
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+
+        .doctors{
+            padding-right: 2rem;
+            padding-bottom: 6rem;
+            display: flex;
+            flex-direction: column;
+            .doctor_card{
+                margin-bottom: 1rem;
+                font-size: 14px;
+                border: solid 1px rgba(128, 128, 128, 0.527);
+                display: grid;
+                grid-template-columns: 4% 5% 20% 5% auto 35%;
+                align-items: center;
+                column-gap: 0.5rem;
+                font-family: TheLightFont;
+                grid-template-areas: 
+                "hr name name name name doctor_image"
+                ". certificate1 certificate1_text icon_image certificate2_text doctor_image"
+                ". clock experience_text building building_text doctor_image"
+                ". map location_text fee fee_text doctor_image"
+                ". button button button . doctor_image"
+                "slots_container slots_container slots_container slots_container slots_container slots_container";
+                span{
+                    font-size: 13px;
+                    font-family: TheLightFont;
+                }
+                .name{
+                    font-size: 22px;
+                    grid-area: name;
+                    color: dodgerblue;
+                    font-family: TheBoldFont;
+                }
+                hr{
+                    grid-area: hr;
+                    display: inline-block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: dodgerblue;
+                    border: none;
+                }
+                .fa-certificate{
+                    @include bluetext();
+                    grid-area: certificate1;
+                }
+                .certificate{
+                    grid-area: certificate2;
+                }
+                .fa-clock{
+                    @include bluetext();
+                    grid-area: clock;
+                }
+                .fa-building{
+                    @include bluetext();
+                    grid-area: building;
+                }
+                .fa-map-marker-alt{
+                    @include bluetext();
+                    grid-area: map;
+                }
+                .fa-rupee-sign{
+                    @include bluetext();
+                    grid-area: fee;
+                }
+                .certificate1_text{
+                    grid-area: certificate1_text;
+                }
+                .certificate2_text{
+                    grid-area:certificate2_text;
+                }
+                .experience_text{
+                    grid-area: experience_text;
+                }
+                .building_text{
+                    grid-area: building_text;
+                }
+                .location_text{
+                    grid-area: location_text;
+                }
+                .fee_text{
+                    grid-area: fee_text;
+                }
+                .certificate{
+                    grid-area: icon_image;
+                    width: 1rem;
+                    height: 1rem;
+                }
+                .book_appointment_tl{
+                    grid-area: button;
+                    background-color: rgb(2,20,51);
+                    @include whitetext();
+                    width: 12rem;
+                    height: 2rem;
+                    justify-self: left;
+                }
+                .doctor_image{
+                    width: 100%;
+                    height: 15rem;
+                    grid-area: doctor_image;
+                    // height: 355px;
+                    object-fit: cover;
+                }
+                .slots_container{
+                    grid-area: slots_container;
+                    .day_selector{
+                        display: none;
+                        padding: 1rem;
+                        grid-template-columns: 20px auto 20px;
+                        align-items: center;
+                        .scroll_back{
+                            height: 20px;
+                            width: 20px;
+                            border-radius: 50%;
+                            background-color: gainsboro;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            i{
+                                font-size: 16px;
+                                color: rgb(10, 85, 161);
+                            }
+                        }
+                        .scroll_forward{
+                            @extend .scroll_back;
+                        }
+                        .days_availability{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .day_entry{
+                                margin: 1rem;
+                                display: none;
+                                .day_heading{
+                                    text-align: center;
+                                    display: block;
+                                    color: rgb(2, 40, 78);
+                                    font-family: TheBoldFont;
+                                    font-size: 18px;
+                                }
+                                .slots_available{
+                                    text-align: center;
+                                    display: block;
+                                    color: dodgerblue;
+                                    font-size: 14px;
+                                    font-family: TheLightFont;
+                                }
+                                .active_slots_available{
+                                    text-decoration: underline;
+                                    font-size: 16px;
+                                    font-family: TheBoldFont;
+                                }
+                                .slots_available:hover{
+                                    font-size: 18px;
+                                    font-family: TheBoldFont;
+                                    text-decoration: underline;
+                                }
+                            }
+                            .active_day{
+                                display: block;
+                            }
+                        }
+                    }
+                    .slot_selector{
+                        display: none;
+                        padding: 1rem;
+                        .slot_phase_heading{
+                            display: block;
+                            font-family: TheLightFont;
+                            text-align: center;
+                            font-size: 18px;
+                        }
+                        .morning_slots{
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            .hospital_0{
+                                margin: 0.5rem;
+                                height: 2rem;
+                                padding: 4px; 
+                                font-family: TheLightFont;
+                                font-size: 14px;
+                                color: green;
+                                border: solid 2px green;   
+                            }
+                            .hospital_1{
+                                @extend .hospital_0;
+                                color: blue;
+                                border: solid 2px blue;
+                            }
+                            .hospital_2{
+                                @extend .hospital_0;
+                                color: yellow;
+                                border: solid 2px yellow;
+                            }
+                            .hospital_3{
+                                @extend .hospital_0;
+                                color: black;
+                                border: solid 2px black;
+                            }
+                            .hospital_4{
+                                @extend .hospital_0;
+                                color: dodgerblue;
+                                border: solid 2px dodgerblue;
+                            }
+                        }
+                        .noon_slots{
+                           @extend .morning_slots;
+                        }
+                        .evening_slots{
+                            @extend .morning_slots;
+                        }
+                        .hospital_zero{
+                            span{
+                                display: block;
+                                font-family: TheLightFont;
+                                font-size: 18px;
+                                text-align: center;
+                                color: green;
+                            }
+                        }
+                        .hospital_one{
+                            span{
+                                display: block;
+                                font-family: TheLightFont;
+                                font-size: 18px;
+                                text-align: center;
+                                color: blue;
+                            }
+                        }
+                        .hospital_two{
+                            span{
+                                display: block;
+                                font-family: TheLightFont;
+                                font-size: 18px;
+                                text-align: center;
+                                color: yellow;
+                            }
+                        }
+                        .hospital_three{
+                            span{
+                                display: block;
+                                font-family: TheLightFont;
+                                font-size: 18px;
+                                text-align: center;
+                                color: black;
+                            }
+                        }
+                        .hospital_four{
+                            span{
+                                display: block;
+                                font-family: TheLightFont;
+                                font-size: 18px;
+                                text-align: center;
+                                color: dodgerblue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pagination{
+            margin-top: 2rem;
+            grid-area: pagination;
+            display: block;
+            justify-self: center;
+            margin-bottom: 2rem;
+            a{
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                border: solid 1px blue;
+                border-radius: 5px;
+                font-size: 22px;
+                background-color: white;
+                color: dodgerblue;
+                margin: 5px;
+                padding: 5px;
+                font-family: TheBoldFont;
+                text-align: center;
+            }
+            .active_page{
+                background-color: dodgerblue;
+                color: white;
+            }
+            a:hover:not(.active_page){
+                background-color: #ddd;
+            }
+        }
+    }
+    .need_help{
+        .need_help_flex{
+            .submit_query{
+                height: 2.5rem;
+                font-size: 15px;
+                font-family: TheLightFont;
+                width: 11rem;
+                background-color: rgb(1,115,178);
+                line-height:25px;
+            }
+        }
+    }
+    footer{
+        border-bottom: solid 8px dodgerblue;
+    }
+}
+
+
+@media screen and (min-width:1024px){
+    
+    .sort{
+        .sort_bar{
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+    }
+    .heading_container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h4{
+            font-family: TheLightFont;
+        }
+    }
+    .nav_block{
+        .laptop_nav{
+            .nav_links{
+                color: midnightblue;
+            }
+        }
+    }
+    .sort{
+        .sort_bar{
+            padding: 1rem 6rem;
+        }
+    }
+   .filters_and_doctors_tab_laptop{
+    .filters{
+        padding-left: 6rem;
+        .selected_filters_laptop{
+            width: 100%;
+            margin-top: 0.7rem;
+            display:flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            .selected_filter_display_span{
+                padding: 6px 10px;
+                border: solid 1px gainsboro;
+                border-radius: 20px;
+                font-size: 14px;
+                margin: 2px;
+                i{
+                    color: dodgerblue;
+                    margin-left: 0.5rem;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .doctors{
+        padding-right: 6rem;
+        .doctor_card{
+            grid-template-columns: 4% 5% 25% 5% auto 30%;
+            hr{
+                margin-bottom: 2rem;
+                margin-top: 1rem;
+            }
+            span{
+                font-size: 16px;
+                font-family: TheLightFont;
+                font-weight: 400;
+            }            
+            .doctor_image{
+                width: 100%;
+                height: 18rem;
+                object-fit: scale-down;
+            }
+            .book_appointment_tl{
+                font-size: 15px;
+                margin-top: 2rem;
+                margin-bottom: 1.5rem;
+                height: 3rem;
+                width: 15rem;
+                border: none;
+            }
+            .name{
+                margin-bottom: 2rem;
+                margin-top: 1rem;
+            }
+            .slots_container{
+                .day_selector{
+                    .days_availability{
+                        .day_entry{
+                            .day_heading{
+                                font-size: 20px;
+                            }
+                            .slots_available{
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                            .slots_available:hover{
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+                .slot_selector{
+                    .slot_phase_heading{
+                        font-size: 20px;
+                    }
+                    .morning_slots{
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        .hospital_0{
+                            margin: 0.5rem;
+                            height: 2rem;
+                            padding: 4px; 
+                            font-family: TheLightFont;
+                            font-size: 16px;
+                            cursor: pointer;
+                            color: green;
+                            border: solid 2px green;   
+                        }
+                        .hospital_1{
+                            @extend .hospital_0;
+                            color: blue;
+                            border: solid 2px blue;
+                        }
+                        .hospital_2{
+                            @extend .hospital_0;
+                            color: yellow;
+                            border: solid 2px yellow;
+                        }
+                        .hospital_3{
+                            @extend .hospital_0;
+                            color: black;
+                            border: solid 2px black;
+                        }
+                        .hospital_4{
+                            @extend .hospital_0;
+                            color: dodgerblue;
+                            border: solid 2px dodgerblue;
+                        }
+                    }
+                    .hospital_zero{
+                        span{
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 20px;
+                            text-align: center;
+                            color: green;
+                        }
+                    }
+                    .hospital_one{
+                        span{
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 20px;
+                            text-align: center;
+                            color: blue;
+                        }
+                    }
+                    .hospital_two{
+                        span{
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 20px;
+                            text-align: center;
+                            color: yellow;
+                        }
+                    }
+                    .hospital_three{
+                        span{
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 20px;
+                            text-align: center;
+                            color: black;
+                        }
+                    }
+                    .hospital_four{
+                        span{
+                            display: block;
+                            font-family: TheLightFont;
+                            font-size: 20px;
+                            text-align: center;
+                            color: dodgerblue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+   }
+   .need_help{
+    padding: 4rem 6rem;
+    background-color: rgb(156,191,218);
+    width: 100%;
+    .need_help_flex{
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            font-size: 16px;
+        }
+        .submit_query{
+            font-size: 22px;
+            height: 4rem;
+            width:15rem;
+        }
+       .need_help_left_div{
+        h3{
+            font-size: 40px;
+            text-align: left;
+        }
+       }
+    }
+}
+}

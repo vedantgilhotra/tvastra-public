@@ -1,0 +1,121 @@
+@import "./theme.scss";
+
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.siteflow{
+    width: 100%;
+    padding: 0rem 1rem;
+    .dashboard_and_page_body{
+        margin-top: 58px;
+        .dashboard{
+            display: none;
+        }
+        .page_body{
+            margin-top: 5rem;
+            background-color: white;
+        }
+    }
+    
+}
+
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+// Tab view , Tab view , Tab view , Tab view
+
+@media screen and (min-width:768px){
+    .siteflow{
+        padding: 2rem;
+        
+    }
+}
+
+
+
+
+
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+// Laptop view , Laptop view , Laptop view , Laptop view
+
+
+@media screen and (min-width:1024px){
+    .siteflow{
+        // overflow: hidden;
+        padding: 3rem 6rem;
+        background-color: white;
+        .dashboard_and_page_body{
+            display: grid;
+            grid-template-columns: 25% 75%;
+            
+            .dashboard{
+             display: block;
+             .dashboard_header{
+                 padding: 2rem;
+                 padding-left: 0px;
+                h2{
+                    text-align: left;
+                }
+             }
+             .dashboard_options{
+                 padding: 2rem;
+                 padding-left: 0px;
+                 padding-top: 0rem;
+                 display: grid;
+                 grid-template-columns: auto;
+                 i{
+                     width: 20px;
+                     height: 20px;
+                     color: dodgerblue;
+                 }
+                 .dashboard_option{
+                     align-self: center;
+                     display:flex;
+                     align-items: center;
+                     height: 2.5rem;
+                     font-family: TheLightFont;
+                     font-size: 18px;
+                     color: black;
+                     i{
+                        margin-left: 1rem;
+                     }
+                     span{
+                         margin:auto 1rem;
+                     }
+                 }
+                 .selected_option{
+                     color: dodgerblue;
+                     font-size: 20px;
+                     font-family: TheBoldFont;
+                 }
+                 .dashboard_option:hover {
+                     border-left: solid 4px dodgerblue;
+                     font-size: 20px;
+                     background-color: gainsboro;
+                 }
+             }
+
+            }
+            .page_body{
+                margin-top: 2rem;
+            }
+        }
+    }
+}
